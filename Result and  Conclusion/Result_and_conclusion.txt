@@ -1,0 +1,28 @@
+RESULTS
+
+Population-specific variant analysis of chromosome 22 was performed using data from the 1000 Genomes Project to compare European (EUR) and South Asian (SAS) populations. Variants were filtered under both strict and loose thresholds and functionally annotated using SnpEff.
+
+Under the loose filtering threshold, the South Asian population exhibited 4,699 SNPs and 1,125 INDELs, whereas the European population showed 1,511 SNPs and 692 INDELs. This represents approximately a threefold increase in SNP burden and nearly double the INDEL burden in SAS compared to EUR. Under strict filtering, SAS retained 4,125 SNPs and 1,024 INDELs, again demonstrating consistently higher variant counts relative to EUR.
+
+Functional impact categorization further highlighted this divergence. Under the loose threshold, EUR variants were distributed as 13,898 MODIFIER, 70 LOW, 54 MODERATE, and 6 HIGH impact variants. In contrast, SAS variants comprised 30,731 MODIFIER, 187 LOW, 112 MODERATE, and 13 HIGH impact variants. Thus, SAS demonstrated more than double the number of MODERATE and HIGH impact variants compared to EUR. A similar pattern was observed under strict filtering, where SAS again showed nearly twice the number of HIGH-impact variants relative to EUR.
+
+Across both populations and thresholds, the majority of variants were intronic, followed by upstream gene variant, downstream gene variant, and intergenic region categories. For example, under the loose threshold, intron variants numbered 8,096 in EUR and 17,534 in SAS. This indicates that most population-specific divergence occurs in non-coding regulatory regions rather than protein-coding sequences.
+
+Despite the predominance of regulatory variants, protein-altering variants were observed and showed population-specific differences. Under the loose threshold, SAS exhibited 94 missense variants compared to 50 in EUR. Additionally, severe functional variants were detected predominantly in SAS, including one stop_gained variant, one frameshift_variant, and two start_lost variants. These classes of mutations are predicted to significantly alter or truncate protein products, suggesting a broader distribution of potentially functional coding variation within the South Asian cohort.
+
+High-impact gene analysis revealed two genes shared across both populations: PI4KAP1 and TMPRSS6. TMPRSS6 encodes a serine protease involved in iron homeostasis and regulation of hepcidin expression, with known clinical relevance in iron metabolism disorders. PI4KAP1 is a pseudogene related to phosphatidylinositol 4-kinase and may play regulatory roles.
+
+Importantly, no high-impact genes were unique to the European population. In contrast, multiple high-impact genes were uniquely identified in the South Asian population, including ADORA2A-AS1, CRYBB2P1, POM121L9P, PRR5-ARHGAP8, CTA-299D3.8, and VPREB1. Among these, VPREB1 is particularly notable, as it encodes a component of the pre-B cell receptor complex and plays a critical role in early B-cell development, implicating potential immune-related divergence. ADORA2A-AS1 is an antisense RNA involved in regulating inflammatory signaling pathways. The presence of these genes suggests ancestry-specific variation in immune and regulatory pathways on chromosome 22.
+
+Overall, both filtering thresholds consistently demonstrated a higher burden of functional and potentially protein-altering variants in the South Asian population compared to the European population.
+
+
+CONCLUSION
+
+This population-specific analysis of chromosome 22 demonstrates that while the majority of genetic divergence between European and South Asian populations occurs within non-coding regulatory regions, meaningful differences emerge in functionally impactful variant categories.
+
+Across both strict and loose filtering strategies, the South Asian population consistently exhibited higher SNP and INDEL counts, approximately double the number of MODERATE variants, and nearly twice the number of HIGH-impact variants compared to the European population. Furthermore, severe coding variants such as frameshift and stop-gained mutations were predominantly observed in the South Asian dataset.
+
+High-impact gene analysis revealed no genes uniquely affected in the European population, whereas multiple genes were uniquely impacted in the South Asian cohort, including immune-related and regulatory genes such as VPREB1 and ADORA2A-AS1. These findings suggest that chromosome 22 harbors broader functional divergence in the South Asian population relative to the European population, particularly within genes involved in immune regulation and cellular signaling.
+
+Taken together, this study highlights the importance of population-specific genomic analysis and demonstrates that ancestry-informed filtering and annotation can reveal differences in functional variant burden that may have biological and clinical relevance.

@@ -1,0 +1,4 @@
+*.vcf
+*.tbi
+*.gz
+data/raw/

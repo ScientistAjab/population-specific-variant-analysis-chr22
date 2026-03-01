@@ -1,0 +1,7 @@
+HIGH impact gene summary (STRICT):
+EUR-specific HIGH genes:
+0 /home/ajab-ezzi/Documents/population-specific-variant-analysis-chr22/results/comparison/HIGH_genes_unique_to_EUR.txt
+SAS-specific HIGH genes:
+4 /home/ajab-ezzi/Documents/population-specific-variant-analysis-chr22/results/comparison/HIGH_genes_unique_to_SAS.txt
+Shared HIGH genes:
+2 /home/ajab-ezzi/Documents/population-specific-variant-analysis-chr22/results/comparison/HIGH_genes_shared.txt

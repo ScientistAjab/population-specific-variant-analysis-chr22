@@ -1,0 +1,7 @@
+HIGH impact gene summary (LOOSE):
+EUR-specific HIGH genes:
+0 /home/ajab-ezzi/Documents/population-specific-variant-analysis-chr22/results/comparison/loose_threshold/HIGH_genes_unique_to_EUR_loose.txt
+SAS-specific HIGH genes:
+5 /home/ajab-ezzi/Documents/population-specific-variant-analysis-chr22/results/comparison/loose_threshold/HIGH_genes_unique_to_SAS_loose.txt
+Shared HIGH genes:
+2 /home/ajab-ezzi/Documents/population-specific-variant-analysis-chr22/results/comparison/loose_threshold/HIGH_genes_shared_loose.txt

@@ -1,0 +1,13 @@
+   3714 intron_variant
+    992 upstream_gene_variant
+    906 downstream_gene_variant
+    562 intergenic_region
+     98 non_coding_transcript_exon_variant
+     58 3_prime_UTR_variant
+     21 synonymous_variant
+     14 missense_variant
+      9 5_prime_UTR_variant
+      4 splice_region_variant&intron_variant
+      4 splice_acceptor_variant&splice_region_variant&intron_variant
+      2 splice_region_variant
+      2 splice_donor_variant&intron_variant

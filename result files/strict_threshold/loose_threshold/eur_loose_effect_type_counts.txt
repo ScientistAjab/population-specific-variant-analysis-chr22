@@ -1,0 +1,17 @@
+   8096 intron_variant
+   2155 downstream_gene_variant
+   2040 upstream_gene_variant
+   1276 intergenic_region
+    203 non_coding_transcript_exon_variant
+    106 3_prime_UTR_variant
+     50 missense_variant
+     43 synonymous_variant
+     22 5_prime_UTR_variant
+     19 splice_region_variant&intron_variant
+      4 splice_acceptor_variant&splice_region_variant&intron_variant
+      3 splice_region_variant
+      3 5_prime_UTR_premature_start_codon_gain_variant
+      2 splice_region_variant&non_coding_transcript_exon_variant
+      2 splice_donor_variant&intron_variant
+      2 conservative_inframe_insertion
+      2 conservative_inframe_deletion

@@ -1,0 +1,1954 @@
+
+<!--==========================================================================
+	FTL macros 
+	========================================================================== -->
+
+
+<!--==========================================================================
+	CSS styles 
+	========================================================================== -->
+
+
+<style type="text/css">
+
+body {
+	background-color: #dddddd;
+}
+
+/* Table styles. */
+
+table {
+  border-color: #000;
+  border-spacing: 0px;
+  border-style: solid;
+  border-width: 1px;
+  cell-spacing: 0px;
+}
+
+.noBorder {
+  border-width: 0px;
+}
+
+td, th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  padding: 2px 0.5em;
+  white-space: nowrap;
+}
+
+td.numeric {
+  text-align: right;
+}
+
+th {
+  background-color: #c0c0c0;
+}
+
+th.mainHeader {
+  background-color: #808080;
+  color: #ffffff;
+  text-align: left;
+}
+
+th a {
+  color: #000080;
+  text-decoration: none;
+}
+
+th a:visited {
+  color: #000080;
+}
+
+th a:active, th a:hover {
+  color: #800000;
+  text-decoration: underline;
+}
+
+.toc {
+	border: 1px solid #aaa;
+	background-color: #eeeeee;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.note {
+	border: 1px solid #aaa;
+	background-color: #eeeeee;
+	padding: 5px;
+	font-size: 90%;
+	text-align: left;
+}
+
+.main {
+	margin-top: 15px;
+	width: 1000px;
+	text-align: left;
+	background: #ffffff;
+	border: 3px solid #777777;
+}
+
+.histo {
+	table-layout:fixed;
+	width:100%;
+	border:1px solid #aaa;
+	word-wrap:break-word;
+}
+
+</style>
+
+
+<!--==========================================================================
+	Index
+	========================================================================== -->
+
+<center>
+<div class="main">
+
+<center> <h3> SnpEff: Variant analysis </h3> </center>
+
+<div style="margin-left: .5em">
+<table class="toc"><tr><td>
+	<center><b>Contents</b></center>
+	<a href="#summary">Summary</a><br>
+	<a href="#changeRateChr"> Variant rate by chromosome</a><br>
+	<a href="#changesByType">Variants by type</a><br>
+	<a href="#effectsImpact"> Number of variants by impact </a><br>
+	<a href="#effectsImpact"> Number of variants by functional class </a><br>
+	<a href="#effects"> Number of variants by annotation </a><br>
+	<a href="#quality">Quality histogram</a><br>
+	<a href="#indels">InDel length histogram</a><br>
+	<a href="#baseChages">Base variant table</a><br>
+	<a href="#tstv">Transition vs transversions (ts/tv)</a><br>
+	<a href="#alleleFreq"> Allele frequency </a><br>
+	<a href="#alleleCount"> Allele Count </a><br>
+	<a href="#codonChanges"> Codon change table </a><br>
+	<a href="#aaChanges"> Amino acid change table </a><br>
+	<a href="#chrChanges"> Chromosome variants plots </a><br>
+	<a href="eur_strict_summary.genes.txt"> Details by gene </a><br>
+</tr></td></table>
+</div>
+
+
+<!--==========================================================================
+	Summary table 
+	========================================================================== -->
+
+<hr>
+<a name="summary">
+<center>
+<b>Summary</b><p>
+
+<table border=0>
+	<tr bgcolor=ffffff> 
+		<td valign=top> <b> Genome </b> </td>
+		<td> GRCh37.75 </td>
+	</tr>
+	<tr bgcolor=dddddd> 
+		<td valign=top> <b> Date </b> </td>
+		<td> 2026-02-26 17:23 </td>
+	</tr>
+	<tr bgcolor=ffffff> 
+		<td valign=top> <b> SnpEff version </b> </td>
+		<td> <pre>SnpEff 5.4a (build 2025-11-25 12:22), by Pablo Cingolani</pre> </td>
+	</tr>
+	<tr bgcolor=dddddd> 
+		<td valign=top> <b> Command line arguments </b> </td>
+		<td> <pre>SnpEff  GRCh37.75 -stats /home/ajab-ezzi/Documents/population-specific-variant-analysis-chr22/results/comparison/eur_strict_summary.html 
+/home/ajab-ezzi/Documents/population-specific-variant-analysis-chr22/results/comparison/eur_strict_clean.vcf.gz 
+</pre> </td>
+	</tr>
+	<tr bgcolor=ffffff> 
+		<td valign=top> <b> Warnings </b> </td>
+		   
+		<td bgcolor="#ffff00"> 1,572 </td>
+	</tr>	
+	<tr bgcolor=dddddd> 
+		<td valign=top> <b> Errors </b> </td>
+		 
+		<td bgcolor="#dddddd"> 0 </td>
+	</tr>	
+	<tr bgcolor=ffffff>
+		<td valign=top> <b> Number of lines (input file) </b> </td>
+		<td> 691 </td>
+	</tr>
+	<tr bgcolor=dddddd>
+		<td valign=top> <b> Number of variants (before filter) </b> </td>
+		<td> 1,449 </td>
+	</tr>
+	<tr bgcolor=ffffff>
+		<td valign=top> <b> Number of non-variants <br>(i.e. reference equals alternative) </b> </td>
+		<td> 0 </td>
+	</tr>
+	<tr bgcolor=dddddd>
+		<td valign=top> <b> Number of variants processed <br> (i.e. after filter and non-variants) </b> </td>
+		<td> 1,449 </td>
+	</tr>
+	<tr bgcolor=ffffff>
+		<td valign=top> <b> Number of known variants <br>(i.e. non-empty ID) </b> </td>
+		<td> 
+		0
+		( 0% ) 
+		</td>
+	</tr>
+	<tr bgcolor=dddddd>
+		<td valign=top> <b> Number of multi-allelic VCF entries <br>(i.e. more than two alleles) </b> </td>
+		<td> 
+		670
+		</td>
+	</tr>
+	<tr bgcolor=ffffff>
+		<td valign=top> <b> Number of annotations </b> </td>
+		<td> 6,386 </td>
+	</tr>
+	<tr bgcolor=dddddd>
+		<td valign=top> <b> Genome total length </b> </td>
+		<td> 32,036,512,384 </td>
+	</tr>
+	<tr bgcolor=ffffff>
+		<td valign=top> <b> Genome effective length </b> </td>
+		<td> 51,304,566 </td>
+	</tr>
+	<tr bgcolor=dddddd>
+		<td valign=top> <b> Variant rate </b> </td>
+		<td> 1 variant every 35,406 bases </td>
+	</tr>
+</table>
+<p>
+</center>
+
+<!--==========================================================================
+	Variant rate by chromosome
+	========================================================================== -->
+
+<hr> 
+<a name="changeRateChr"> 
+
+<center>
+<b> Variants rate details </b><p>
+
+<table border=1>
+	<tr><th> Chromosome </th><th> Length </th><th> Variants </th><th> Variants rate </th></tr> 
+		<tr>
+			<td> 22 </td>
+			<td class="numeric"> 51,304,566 </td>
+			<td class="numeric"> 1,449 </td>
+			<td class="numeric"> 35,406 </td>
+		</tr> 
+	<tr>
+		<th> Total </th>
+		<th class="numeric"> 51,304,566 </th>
+		<th class="numeric"> 1,449 </th>
+		<th class="numeric"> 35,406 </th>
+	</tr> 
+</table> 
+</center>
+
+<!--==========================================================================
+	Variants by type
+	========================================================================== -->
+
+<hr> 
+<a name="changesByType"> 
+<center>
+<b> Number variants by type</b><p>
+
+<table border=1>
+	<thead>
+		<tr>
+			<th> <b> Type   </b> </th>
+			<th> <b> Total  </b> </th>
+		</tr>
+	</thead>
+    <tbody>
+	    <tr>
+	    	<td> <b> SNP </b> </td>
+	    	<td class="numeric" bgcolor="#ff0000"> 707 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> MNP </b> </td>
+	    	<td class="numeric" bgcolor="ffffff"> 0 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> INS </b> </td>
+	    	<td class="numeric" bgcolor="#b14d00"> 493 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> DEL </b> </td>
+	    	<td class="numeric" bgcolor="#59a500"> 248 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> MIXED </b> </td>
+	    	<td class="numeric" bgcolor="#00ff00"> 1 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> INV </b> </td>
+	    	<td class="numeric" bgcolor="ffffff"> 0 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> DUP </b> </td>
+	    	<td class="numeric" bgcolor="ffffff"> 0 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> CNV </b> </td>
+	    	<td class="numeric" bgcolor="ffffff"> 0 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> BND </b> </td>
+	    	<td class="numeric" bgcolor="ffffff"> 0 </td>
+	    </tr>
+	    <tr>
+	    	<td> <b> INTERVAL </b> </td>
+	    	<td class="numeric" bgcolor="ffffff"> 0 </td>
+	    </tr>
+    </tbody>
+    <tfoot>
+	    <tr>
+	    	<th><b>Total </b> </th>
+	    	<th class="numeric"> 1,449 </th>
+	    </tr>
+    </tfoot>
+</table>
+</center>
+
+<!--==========================================================================
+	Effects by impact
+	========================================================================== -->
+
+<hr> 
+<a name="effectsImpact"> 
+<center>
+<b> Number of effects by impact </b> <p> 
+
+<table border=0>
+	<thead>
+		<tr> 
+			<th><b> Type (alphabetical order)  </b></th>
+			<th> &nbsp; </th>
+			<th> Count </th>
+			<th> Percent </th>
+		</tr>
+	</thead>
+		<tr> 
+			<td> <b> HIGH </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00ff00"> 6 </td> 
+			<td class="numeric" bgcolor="#00ff00"> 0.094% </td>
+		</tr>
+		<tr> 
+			<td> <b> LOW </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 27 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.423% </td>
+		</tr>
+		<tr> 
+			<td> <b> MODERATE </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 14 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.219% </td>
+		</tr>
+		<tr> 
+			<td> <b> MODIFIER </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#ff0000"> 6,339 </td> 
+			<td class="numeric" bgcolor="#ff0000"> 99.264% </td>
+		</tr>
+</table><br>
+<p>
+</center>
+
+<!--==========================================================================
+	Effects by functional class
+	========================================================================== -->
+
+<hr> 
+<a name="effectsFuncClass"> 
+<center>
+<b> Number of effects by functional class </b> <p> 
+
+<table border=0>
+	<thead>
+		<tr> 
+			<th><b> Type (alphabetical order)  </b></th>
+			<th> &nbsp; </th>
+			<th> Count </th>
+			<th> Percent </th>
+		</tr>
+	</thead>
+		<tr> 
+			<td> <b> MISSENSE </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00ff00"> 14 </td> 
+			<td class="numeric" bgcolor="#00ff00"> 40% </td>
+		</tr>
+		<tr> 
+			<td> <b> SILENT </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#ff0000"> 21 </td> 
+			<td class="numeric" bgcolor="#ff0000"> 60% </td>
+		</tr>
+</table><br>
+<p>
+
+Missense / Silent ratio: 0.6667
+
+</center>
+
+<!--==========================================================================
+	Effects stats
+	========================================================================== -->
+
+<hr> 
+<a name="effects"> 
+<center>
+<b> Number of annotaitons and region counts </b> <p> 
+
+<table border=0>
+	<tr>
+		<th> Annotation </th>
+		<th> Region </th>
+	</tr>
+	<tr>
+		<td> <table border=0>
+	<thead>
+		<tr> 
+			<th><b> Type (alphabetical order)  </b></th>
+			<th> &nbsp; </th>
+			<th> Count </th>
+			<th> Percent </th>
+		</tr>
+	</thead>
+		<tr> 
+			<td> <b> 3_prime_UTR_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#03fb00"> 58 </td> 
+			<td class="numeric" bgcolor="#03fb00"> 0.906% </td>
+		</tr>
+		<tr> 
+			<td> <b> 5_prime_UTR_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 9 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.141% </td>
+		</tr>
+		<tr> 
+			<td> <b> downstream_gene_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#3dc100"> 906 </td> 
+			<td class="numeric" bgcolor="#3dc100"> 14.156% </td>
+		</tr>
+		<tr> 
+			<td> <b> intergenic_region </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#26d800"> 562 </td> 
+			<td class="numeric" bgcolor="#26d800"> 8.781% </td>
+		</tr>
+		<tr> 
+			<td> <b> intron_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#ff0000"> 3,724 </td> 
+			<td class="numeric" bgcolor="#ff0000"> 58.188% </td>
+		</tr>
+		<tr> 
+			<td> <b> missense_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 14 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.219% </td>
+		</tr>
+		<tr> 
+			<td> <b> non_coding_transcript_exon_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#06f800"> 98 </td> 
+			<td class="numeric" bgcolor="#06f800"> 1.531% </td>
+		</tr>
+		<tr> 
+			<td> <b> splice_acceptor_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 4 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.062% </td>
+		</tr>
+		<tr> 
+			<td> <b> splice_donor_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00ff00"> 2 </td> 
+			<td class="numeric" bgcolor="#00ff00"> 0.031% </td>
+		</tr>
+		<tr> 
+			<td> <b> splice_region_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 10 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.156% </td>
+		</tr>
+		<tr> 
+			<td> <b> synonymous_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#01fd00"> 21 </td> 
+			<td class="numeric" bgcolor="#01fd00"> 0.328% </td>
+		</tr>
+		<tr> 
+			<td> <b> upstream_gene_variant </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#43bb00"> 992 </td> 
+			<td class="numeric" bgcolor="#43bb00"> 15.5% </td>
+		</tr>
+</table><br>
+ </td>
+		<td> <table border=0>
+	<thead>
+		<tr> 
+			<th><b> Type (alphabetical order)  </b></th>
+			<th> &nbsp; </th>
+			<th> Count </th>
+			<th> Percent </th>
+		</tr>
+	</thead>
+		<tr> 
+			<td> <b> DOWNSTREAM </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#3ec000"> 906 </td> 
+			<td class="numeric" bgcolor="#3ec000"> 14.187% </td>
+		</tr>
+		<tr> 
+			<td> <b> EXON </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#08f600"> 133 </td> 
+			<td class="numeric" bgcolor="#08f600"> 2.083% </td>
+		</tr>
+		<tr> 
+			<td> <b> INTERGENIC </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#26d800"> 562 </td> 
+			<td class="numeric" bgcolor="#26d800"> 8.801% </td>
+		</tr>
+		<tr> 
+			<td> <b> INTRON </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#ff0000"> 3,714 </td> 
+			<td class="numeric" bgcolor="#ff0000"> 58.158% </td>
+		</tr>
+		<tr> 
+			<td> <b> SPLICE_SITE_ACCEPTOR </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 4 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.063% </td>
+		</tr>
+		<tr> 
+			<td> <b> SPLICE_SITE_DONOR </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00ff00"> 2 </td> 
+			<td class="numeric" bgcolor="#00ff00"> 0.031% </td>
+		</tr>
+		<tr> 
+			<td> <b> SPLICE_SITE_REGION </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 6 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.094% </td>
+		</tr>
+		<tr> 
+			<td> <b> UPSTREAM </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#44ba00"> 992 </td> 
+			<td class="numeric" bgcolor="#44ba00"> 15.534% </td>
+		</tr>
+		<tr> 
+			<td> <b> UTR_3_PRIME </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#03fb00"> 58 </td> 
+			<td class="numeric" bgcolor="#03fb00"> 0.908% </td>
+		</tr>
+		<tr> 
+			<td> <b> UTR_5_PRIME </b> </td> 
+			<th> &nbsp; </th>
+			<td class="numeric" bgcolor="#00fe00"> 9 </td> 
+			<td class="numeric" bgcolor="#00fe00"> 0.141% </td>
+		</tr>
+</table><br>
+ </td>
+	</tr>
+</table>
+<p>
+
+<img src="http://chart.apis.google.com/chart?cht=bvs&chs=800x300&chbh=50,4,8&chxt=y,y,x,x&chtt=Variations&chxp=1,50.0|3,50.0&chxr=0,0.0,58.158471656749136|1,0.0,100.0|3,0.0,100.0&chco=00FFFF,FA8072,FF0000,A52A2A,FFA500,DEB887,E9967A,7FFFD4,808080&chdl=Upstream|5%27UTR|Exon|Splice+Donor|Intron|Splice+Acceptor|3%27UTR|Downstream|Intergenic&chxl=1:|%25|2:|Intergenic|Up|5%27UTR|Exon|Donor|Intron|Acceptor|Exon|3%27UTR|Down|Intergenic|3:|&chd=e:AARGAAAAAAAAAAAAAAAAAA,AAAAAKAAAAAAAAAAAAAAAA,AAAAAACTAAAAAACTAAAAAA,AAAAAAAAACAAAAAAAAAAAA,AAAAAAAAAA..AAAAAAAAAA,AAAAAAAAAAAAAEAAAAAAAA,AAAAAAAAAAAAAAAABAAAAA,AAAAAAAAAAAAAAAAAAPnAA,JsAAAAAAAAAAAAAAAAAAJs" border=1><p>
+
+</center>
+
+<!--==========================================================================
+	Quality
+	========================================================================== -->
+
+<hr> 
+<a name="quality"> 
+<b> Quality:</b> 
+<p>
+<pre>
+	<table class="histo">
+		<tr> <th width=15%>Min</th><td>100</td> </tr>
+		<tr> <th>Max</th><td>100</td> </tr>
+		<tr> <th>Mean</th><td>100</td> </tr>
+		<tr> <th>Median</th><td>100</td> </tr>
+		<tr> <th>Standard deviation</th><td>0</td> </tr>
+		<tr> <th>Values</th><td>100</td> </tr>
+		<tr> <th>Count</th><td>691</td> </tr>
+		</tr>
+	</table>
+	<img src="http://chart.apis.google.com/chart?cht=bvg&chd=e:..&chbh=8,4,2&chs=800x300&chxt=y,y,x,x&chxp=1,50.0|3,50.0&chtt=Quality+histogram&chxl=1:|Count|2:|100|3:|Quality&chxr=0,0.0,691.0|1,0.0,100.0|3,0.0,100.0"><br>
+</pre>
+
+<!--==========================================================================
+	InDels
+	========================================================================== -->
+
+<hr> 
+<a name="indels"> 
+<b> Insertions and deletions length:</b> 
+<p>
+<pre>
+	<table class="histo">
+		<tr> <th width=15%>Min</th><td>0</td> </tr>
+		<tr> <th>Max</th><td>37</td> </tr>
+		<tr> <th>Mean</th><td>2.937</td> </tr>
+		<tr> <th>Median</th><td>1</td> </tr>
+		<tr> <th>Standard deviation</th><td>4.724</td> </tr>
+		<tr> <th>Values</th><td>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,23,24,27,29,30,37</td> </tr>
+		<tr> <th>Count</th><td>131,342,40,70,25,24,8,18,11,13,5,15,5,3,5,7,2,2,1,3,2,1,2,3,1,2</td> </tr>
+		</tr>
+	</table>
+	<img src="http://chart.apis.google.com/chart?cht=bvg&chbh=8,4,2&chs=800x300&chxt=y,y,x,x&chg=3.0,34.0,3,2&chxp=1,50.0|3,50.0&chtt=Insertion+deletion+length+histogram&chxr=0,1.0,342.0|1,0.0,100.0|3,0.0,100.0&chd=e:YU..HCMzEfD2BSCkBSB7ApCkApAAApApAAAAAAAAAAAAAAAAAAAA&chxl=1:|Count|2:|0||||||||||10||||||||||23|||||37|3:|Length"><br>
+</pre>
+
+<!--==========================================================================
+	Base changes
+	========================================================================== -->
+
+<hr> 
+<a name="baseChages"> 
+<center>
+<b> Base changes (SNPs) </b> <p>
+
+<table border=1>
+    <tr>
+    	<td> &nbsp; </td>  <th> <b> A </b> </th> <th> <b> C </b> </th> <th> <b> G </b> </th> <th> <b> T </b> </th>
+    </tr>
+	    <tr> <th> <b> A </b> </th><td class="numeric" bgcolor="ffffff"> 0 </td><td class="numeric" bgcolor="#35c900"> 55 </td><td class="numeric" bgcolor="#3bc300"> 56 </td><td class="numeric" bgcolor="#41bd00"> 57 </td> </tr>
+	    <tr> <th> <b> C </b> </th><td class="numeric" bgcolor="#41bd00"> 57 </td><td class="numeric" bgcolor="ffffff"> 0 </td><td class="numeric" bgcolor="#827c00"> 68 </td><td class="numeric" bgcolor="#ff0000"> 89 </td> </tr>
+	    <tr> <th> <b> G </b> </th><td class="numeric" bgcolor="#708e00"> 65 </td><td class="numeric" bgcolor="#35c900"> 55 </td><td class="numeric" bgcolor="ffffff"> 0 </td><td class="numeric" bgcolor="#58a600"> 61 </td> </tr>
+	    <tr> <th> <b> T </b> </th><td class="numeric" bgcolor="#00ff00"> 46 </td><td class="numeric" bgcolor="#1de100"> 51 </td><td class="numeric" bgcolor="#05f900"> 47 </td><td class="numeric" bgcolor="ffffff"> 0 </td> </tr>
+</table>
+</center>
+
+<p>
+
+<!--==========================================================================
+	Ts/Tv
+	========================================================================== -->
+
+<hr> 
+<a name="tstv">
+<center> <b> Ts/Tv (transitions / transversions) </b> <p> </center>
+
+<small>
+<b>Note:</b> Only SNPs are used for this statistic.<br>
+<b>Note:</b> This Ts/Tv ratio is a 'raw' ratio (ratio of observed events).
+</small>
+<p>
+
+<center>
+<table border=1>
+	<tr> <th> Transitions </th><td class="numeric"> 6,690 </td> </tr>
+	<tr> <th> Transversions </th><td class="numeric"> 2,027 </td> </tr>
+	<tr> <th> Ts/Tv ratio </th><td class="numeric"> 3.3004 </td> </tr>
+</table>
+</center>
+<p>
+
+	<b>All variants:</b>
+	<pre>Sample ,HG00096,HG00097,HG00099,HG00100,HG00101,HG00102,HG00103,HG00105,HG00106,HG00107,HG00108,HG00109,HG00110,HG00111,HG00112,HG00113,HG00114,HG00115,HG00116,HG00117,HG00118,HG00119,HG00120,HG00121,HG00122,HG00123,HG00125,HG00126,HG00127,HG00128,HG00129,HG00130,HG00131,HG00132,HG00133,HG00136,HG00137,HG00138,HG00139,HG00140,HG00141,HG00142,HG00143,HG00145,HG00146,HG00148,HG00149,HG00150,HG00151,HG00154,HG00155,HG00157,HG00158,HG00159,HG00160,HG00171,HG00173,HG00174,HG00176,HG00177,HG00178,HG00179,HG00180,HG00181,HG00182,HG00183,HG00185,HG00186,HG00187,HG00188,HG00189,HG00190,HG00231,HG00232,HG00233,HG00234,HG00235,HG00236,HG00237,HG00238,HG00239,HG00240,HG00242,HG00243,HG00244,HG00245,HG00246,HG00250,HG00251,HG00252,HG00253,HG00254,HG00255,HG00256,HG00257,HG00258,HG00259,HG00260,HG00261,HG00262,HG00263,HG00264,HG00265,HG00266,HG00267,HG00268,HG00269,HG00271,HG00272,HG00273,HG00274,HG00275,HG00276,HG00277,HG00278,HG00280,HG00281,HG00282,HG00284,HG00285,HG00288,HG00290,HG00304,HG00306,HG00308,HG00309,HG00310,HG00311,HG00313,HG00315,HG00318,HG00319,HG00320,HG00321,HG00323,HG00324,HG00325,HG00326,HG00327,HG00328,HG00329,HG00330,HG00331,HG00332,HG00334,HG00335,HG00336,HG00337,HG00338,HG00339,HG00341,HG00342,HG00343,HG00344,HG00345,HG00346,HG00349,HG00350,HG00351,HG00353,HG00355,HG00356,HG00357,HG00358,HG00360,HG00361,HG00362,HG00364,HG00365,HG00366,HG00367,HG00368,HG00369,HG00371,HG00372,HG00373,HG00375,HG00376,HG00378,HG00379,HG00380,HG00381,HG00382,HG00383,HG00384,HG00403,HG00404,HG00406,HG00407,HG00409,HG00410,HG00419,HG00421,HG00422,HG00428,HG00436,HG00437,HG00442,HG00443,HG00445,HG00446,HG00448,HG00449,HG00451,HG00452,HG00457,HG00458,HG00463,HG00464,HG00472,HG00473,HG00475,HG00476,HG00478,HG00479,HG00500,HG00513,HG00524,HG00525,HG00530,HG00531,HG00533,HG00534,HG00536,HG00537,HG00542,HG00543,HG00551,HG00553,HG00554,HG00556,HG00557,HG00559,HG00560,HG00565,HG00566,HG00580,HG00581,HG00583,HG00584,HG00589,HG00590,HG00592,HG00593,HG00595,HG00596,HG00598,HG00599,HG00607,HG00608,HG00610,HG00611,HG00613,HG00614,HG00619,HG00620,HG00622,HG00623,HG00625,HG00626,HG00628,HG00629,HG00631,HG00632,HG00634,HG00637,HG00638,HG00640,HG00641,HG00650,HG00651,HG00653,HG00654,HG00656,HG00657,HG00662,HG00663,HG00671,HG00672,HG00674,HG00675,HG00683,HG00684,HG00689,HG00690,HG00692,HG00693,HG00698,HG00699,HG00701,HG00704,HG00705,HG00707,HG00708,HG00717,HG00728,HG00729,HG00731,HG00732,HG00734,HG00736,HG00737,HG00739,HG00740,HG00742,HG00743,HG00759,HG00766,HG00844,HG00851,HG00864,HG00867,HG00879,HG00881,HG00956,HG00978,HG00982,HG01028,HG01029,HG01031,HG01046,HG01047,HG01048,HG01049,HG01051,HG01052,HG01054,HG01055,HG01058,HG01060,HG01061,HG01063,HG01064,HG01066,HG01067,HG01069,HG01070,HG01072,HG01073,HG01075,HG01077,HG01079,HG01080,HG01082,HG01083,HG01085,HG01086,HG01088,HG01089,HG01092,HG01094,HG01095,HG01097,HG01098,HG01101,HG01102,HG01104,HG01105,HG01107,HG01108,HG01110,HG01111,HG01112,HG01113,HG01119,HG01121,HG01122,HG01124,HG01125,HG01130,HG01131,HG01133,HG01134,HG01136,HG01137,HG01139,HG01140,HG01142,HG01148,HG01149,HG01161,HG01162,HG01164,HG01167,HG01168,HG01170,HG01171,HG01173,HG01174,HG01176,HG01177,HG01182,HG01183,HG01187,HG01188,HG01190,HG01191,HG01197,HG01198,HG01200,HG01204,HG01205,HG01241,HG01242,HG01247,HG01248,HG01250,HG01251,HG01253,HG01254,HG01256,HG01257,HG01259,HG01260,HG01269,HG01271,HG01272,HG01275,HG01277,HG01280,HG01281,HG01284,HG01286,HG01302,HG01303,HG01305,HG01308,HG01311,HG01312,HG01323,HG01325,HG01326,HG01334,HG01341,HG01342,HG01344,HG01345,HG01348,HG01350,HG01351,HG01353,HG01354,HG01356,HG01357,HG01359,HG01360,HG01362,HG01363,HG01365,HG01366,HG01369,HG01372,HG01374,HG01375,HG01377,HG01378,HG01383,HG01384,HG01389,HG01390,HG01392,HG01393,HG01395,HG01396,HG01398,HG01402,HG01403,HG01405,HG01412,HG01413,HG01414,HG01431,HG01432,HG01435,HG01437,HG01438,HG01440,HG01441,HG01443,HG01444,HG01447,HG01455,HG01456,HG01459,HG01461,HG01462,HG01464,HG01465,HG01468,HG01474,HG01479,HG01485,HG01486,HG01488,HG01489,HG01491,HG01492,HG01494,HG01495,HG01497,HG01498,HG01500,HG01501,HG01503,HG01504,HG01506,HG01507,HG01509,HG01510,HG01512,HG01513,HG01515,HG01516,HG01518,HG01519,HG01521,HG01522,HG01524,HG01525,HG01527,HG01528,HG01530,HG01531,HG01536,HG01537,HG01550,HG01551,HG01556,HG01565,HG01566,HG01571,HG01572,HG01577,HG01578,HG01583,HG01586,HG01589,HG01593,HG01595,HG01596,HG01597,HG01598,HG01599,HG01600,HG01602,HG01603,HG01605,HG01606,HG01607,HG01608,HG01610,HG01612,HG01613,HG01615,HG01617,HG01618,HG01619,HG01620,HG01623,HG01624,HG01625,HG01626,HG01628,HG01630,HG01631,HG01632,HG01668,HG01669,HG01670,HG01672,HG01673,HG01675,HG01676,HG01678,HG01679,HG01680,HG01682,HG01684,HG01685,HG01686,HG01694,HG01695,HG01697,HG01699,HG01700,HG01702,HG01704,HG01705,HG01707,HG01708,HG01709,HG01710,HG01746,HG01747,HG01756,HG01757,HG01761,HG01762,HG01765,HG01766,HG01767,HG01768,HG01770,HG01771,HG01773,HG01775,HG01776,HG01777,HG01779,HG01781,HG01783,HG01784,HG01785,HG01786,HG01789,HG01790,HG01791,HG01794,HG01795,HG01796,HG01797,HG01798,HG01799,HG01800,HG01801,HG01802,HG01804,HG01805,HG01806,HG01807,HG01808,HG01809,HG01810,HG01811,HG01812,HG01813,HG01815,HG01816,HG01817,HG01840,HG01841,HG01842,HG01843,HG01844,HG01845,HG01846,HG01847,HG01848,HG01849,HG01850,HG01851,HG01852,HG01853,HG01855,HG01857,HG01858,HG01859,HG01860,HG01861,HG01862,HG01863,HG01864,HG01865,HG01866,HG01867,HG01868,HG01869,HG01870,HG01871,HG01872,HG01873,HG01874,HG01878,HG01879,HG01880,HG01882,HG01883,HG01885,HG01886,HG01889,HG01890,HG01892,HG01893,HG01894,HG01896,HG01912,HG01914,HG01915,HG01917,HG01918,HG01920,HG01921,HG01923,HG01924,HG01926,HG01927,HG01932,HG01933,HG01935,HG01936,HG01938,HG01939,HG01941,HG01942,HG01944,HG01945,HG01947,HG01948,HG01950,HG01951,HG01953,HG01954,HG01956,HG01958,HG01961,HG01965,HG01967,HG01968,HG01970,HG01971,HG01973,HG01974,HG01976,HG01977,HG01979,HG01980,HG01982,HG01985,HG01986,HG01988,HG01989,HG01990,HG01991,HG01992,HG01997,HG02002,HG02003,HG02006,HG02008,HG02009,HG02010,HG02012,HG02013,HG02014,HG02016,HG02017,HG02019,HG02020,HG02023,HG02025,HG02026,HG02028,HG02029,HG02031,HG02032,HG02035,HG02040,HG02047,HG02048,HG02049,HG02050,HG02051,HG02052,HG02053,HG02054,HG02057,HG02058,HG02060,HG02061,HG02064,HG02067,HG02069,HG02070,HG02072,HG02073,HG02075,HG02076,HG02078,HG02079,HG02081,HG02082,HG02084,HG02085,HG02086,HG02087,HG02088,HG02089,HG02090,HG02095,HG02102,HG02104,HG02105,HG02107,HG02108,HG02111,HG02113,HG02116,HG02121,HG02122,HG02127,HG02128,HG02130,HG02131,HG02133,HG02134,HG02136,HG02137,HG02138,HG02139,HG02140,HG02141,HG02142,HG02143,HG02144,HG02146,HG02147,HG02150,HG02151,HG02152,HG02153,HG02154,HG02155,HG02156,HG02164,HG02165,HG02166,HG02178,HG02179,HG02180,HG02181,HG02182,HG02184,HG02185,HG02186,HG02187,HG02188,HG02190,HG02215,HG02219,HG02220,HG02221,HG02223,HG02224,HG02230,HG02231,HG02232,HG02233,HG02235,HG02236,HG02238,HG02239,HG02250,HG02252,HG02253,HG02255,HG02256,HG02259,HG02260,HG02262,HG02265,HG02266,HG02271,HG02272,HG02274,HG02275,HG02277,HG02278,HG02281,HG02282,HG02283,HG02284,HG02285,HG02286,HG02291,HG02292,HG02298,HG02299,HG02301,HG02304,HG02307,HG02308,HG02309,HG02312,HG02314,HG02315,HG02317,HG02318,HG02322,HG02323,HG02325,HG02330,HG02332,HG02334,HG02337,HG02339,HG02343,HG02345,HG02348,HG02351,HG02353,HG02355,HG02356,HG02360,HG02364,HG02367,HG02371,HG02373,HG02374,HG02375,HG02379,HG02380,HG02382,HG02383,HG02384,HG02385,HG02386,HG02389,HG02390,HG02391,HG02392,HG02394,HG02395,HG02396,HG02397,HG02398,HG02399,HG02401,HG02402,HG02406,HG02407,HG02408,HG02409,HG02410,HG02419,HG02420,HG02425,HG02427,HG02429,HG02433,HG02439,HG02442,HG02445,HG02449,HG02450,HG02455,HG02461,HG02462,HG02464,HG02465,HG02470,HG02471,HG02476,HG02477,HG02479,HG02481,HG02484,HG02485,HG02489,HG02490,HG02491,HG02493,HG02494,HG02496,HG02497,HG02501,HG02502,HG02505,HG02508,HG02511,HG02512,HG02513,HG02521,HG02522,HG02536,HG02537,HG02541,HG02545,HG02546,HG02549,HG02554,HG02555,HG02557,HG02558,HG02561,HG02562,HG02568,HG02570,HG02571,HG02573,HG02574,HG02577,HG02580,HG02582,HG02583,HG02585,HG02586,HG02588,HG02589,HG02594,HG02595,HG02597,HG02600,HG02601,HG02603,HG02604,HG02610,HG02611,HG02613,HG02614,HG02620,HG02621,HG02623,HG02624,HG02628,HG02629,HG02634,HG02635,HG02642,HG02643,HG02645,HG02646,HG02648,HG02649,HG02651,HG02652,HG02654,HG02655,HG02657,HG02658,HG02660,HG02661,HG02666,HG02667,HG02675,HG02676,HG02678,HG02679,HG02681,HG02682,HG02684,HG02685,HG02687,HG02688,HG02690,HG02691,HG02694,HG02696,HG02697,HG02699,HG02700,HG02702,HG02703,HG02715,HG02716,HG02721,HG02722,HG02724,HG02725,HG02727,HG02728,HG02731,HG02733,HG02734,HG02736,HG02737,HG02756,HG02757,HG02759,HG02760,HG02763,HG02768,HG02769,HG02771,HG02772,HG02774,HG02775,HG02778,HG02780,HG02783,HG02784,HG02786,HG02787,HG02789,HG02790,HG02792,HG02793,HG02798,HG02799,HG02804,HG02805,HG02807,HG02808,HG02810,HG02811,HG02813,HG02814,HG02816,HG02817,HG02819,HG02820,HG02836,HG02837,HG02839,HG02840,HG02851,HG02852,HG02854,HG02855,HG02860,HG02861,HG02870,HG02878,HG02879,HG02881,HG02882,HG02884,HG02885,HG02887,HG02888,HG02890,HG02891,HG02895,HG02896,HG02922,HG02923,HG02938,HG02941,HG02943,HG02944,HG02946,HG02947,HG02952,HG02953,HG02968,HG02970,HG02971,HG02973,HG02974,HG02976,HG02977,HG02979,HG02981,HG02982,HG02983,HG03006,HG03007,HG03009,HG03012,HG03015,HG03016,HG03018,HG03019,HG03021,HG03022,HG03024,HG03025,HG03027,HG03028,HG03039,HG03040,HG03045,HG03046,HG03048,HG03049,HG03052,HG03054,HG03055,HG03057,HG03058,HG03060,HG03061,HG03063,HG03064,HG03066,HG03069,HG03072,HG03073,HG03074,HG03077,HG03078,HG03079,HG03081,HG03082,HG03084,HG03085,HG03086,HG03088,HG03091,HG03095,HG03096,HG03097,HG03099,HG03100,HG03103,HG03105,HG03108,HG03109,HG03111,HG03112,HG03114,HG03115,HG03117,HG03118,HG03120,HG03121,HG03123,HG03124,HG03126,HG03127,HG03129,HG03130,HG03132,HG03133,HG03135,HG03136,HG03139,HG03157,HG03159,HG03160,HG03162,HG03163,HG03166,HG03168,HG03169,HG03172,HG03175,HG03189,HG03190,HG03193,HG03195,HG03196,HG03198,HG03199,HG03202,HG03209,HG03212,HG03224,HG03225,HG03228,HG03229,HG03234,HG03235,HG03237,HG03238,HG03240,HG03241,HG03246,HG03247,HG03258,HG03259,HG03265,HG03267,HG03268,HG03270,HG03271,HG03279,HG03280,HG03291,HG03294,HG03295,HG03297,HG03298,HG03300,HG03301,HG03303,HG03304,HG03311,HG03313,HG03342,HG03343,HG03351,HG03352,HG03354,HG03363,HG03366,HG03367,HG03369,HG03370,HG03372,HG03376,HG03378,HG03380,HG03382,HG03385,HG03388,HG03391,HG03394,HG03397,HG03401,HG03410,HG03419,HG03428,HG03432,HG03433,HG03436,HG03437,HG03439,HG03442,HG03445,HG03446,HG03449,HG03451,HG03452,HG03455,HG03457,HG03458,HG03460,HG03461,HG03464,HG03469,HG03470,HG03472,HG03473,HG03476,HG03478,HG03479,HG03484,HG03485,HG03488,HG03490,HG03491,HG03499,HG03511,HG03514,HG03515,HG03517,HG03518,HG03520,HG03521,HG03538,HG03539,HG03547,HG03548,HG03556,HG03557,HG03558,HG03559,HG03563,HG03565,HG03567,HG03571,HG03572,HG03575,HG03577,HG03578,HG03583,HG03585,HG03589,HG03593,HG03594,HG03595,HG03598,HG03600,HG03603,HG03604,HG03607,HG03611,HG03615,HG03616,HG03619,HG03624,HG03625,HG03629,HG03631,HG03634,HG03636,HG03640,HG03642,HG03643,HG03644,HG03645,HG03646,HG03649,HG03652,HG03653,HG03660,HG03663,HG03667,HG03668,HG03672,HG03673,HG03679,HG03680,HG03681,HG03684,HG03685,HG03686,HG03687,HG03689,HG03690,HG03691,HG03692,HG03693,HG03694,HG03695,HG03696,HG03697,HG03698,HG03702,HG03703,HG03705,HG03706,HG03708,HG03709,HG03711,HG03713,HG03714,HG03716,HG03717,HG03718,HG03720,HG03722,HG03727,HG03729,HG03730,HG03731,HG03733,HG03736,HG03738,HG03740,HG03741,HG03742,HG03743,HG03744,HG03745,HG03746,HG03750,HG03752,HG03753,HG03754,HG03755,HG03756,HG03757,HG03760,HG03762,HG03765,HG03767,HG03770,HG03771,HG03772,HG03773,HG03774,HG03775,HG03777,HG03778,HG03779,HG03780,HG03781,HG03782,HG03784,HG03785,HG03786,HG03787,HG03788,HG03789,HG03790,HG03792,HG03793,HG03796,HG03800,HG03802,HG03803,HG03805,HG03808,HG03809,HG03812,HG03814,HG03815,HG03817,HG03821,HG03823,HG03824,HG03826,HG03829,HG03830,HG03832,HG03833,HG03836,HG03837,HG03838,HG03844,HG03846,HG03848,HG03849,HG03850,HG03851,HG03854,HG03856,HG03857,HG03858,HG03861,HG03862,HG03863,HG03864,HG03866,HG03867,HG03868,HG03869,HG03870,HG03871,HG03872,HG03873,HG03874,HG03875,HG03882,HG03884,HG03885,HG03886,HG03887,HG03888,HG03890,HG03894,HG03895,HG03896,HG03897,HG03898,HG03899,HG03900,HG03902,HG03905,HG03907,HG03908,HG03910,HG03911,HG03913,HG03914,HG03916,HG03917,HG03919,HG03920,HG03922,HG03925,HG03926,HG03928,HG03931,HG03934,HG03937,HG03940,HG03941,HG03943,HG03944,HG03945,HG03947,HG03949,HG03950,HG03951,HG03953,HG03955,HG03960,HG03963,HG03965,HG03967,HG03968,HG03969,HG03971,HG03973,HG03974,HG03976,HG03977,HG03978,HG03985,HG03986,HG03989,HG03990,HG03991,HG03995,HG03998,HG03999,HG04001,HG04002,HG04003,HG04006,HG04014,HG04015,HG04017,HG04018,HG04019,HG04020,HG04022,HG04023,HG04025,HG04026,HG04029,HG04033,HG04035,HG04038,HG04039,HG04042,HG04047,HG04054,HG04056,HG04059,HG04060,HG04061,HG04062,HG04063,HG04070,HG04075,HG04076,HG04080,HG04090,HG04093,HG04094,HG04096,HG04098,HG04099,HG04100,HG04106,HG04107,HG04118,HG04131,HG04134,HG04140,HG04141,HG04144,HG04146,HG04152,HG04153,HG04155,HG04156,HG04158,HG04159,HG04161,HG04162,HG04164,HG04171,HG04173,HG04176,HG04177,HG04180,HG04182,HG04183,HG04185,HG04186,HG04188,HG04189,HG04194,HG04195,HG04198,HG04200,HG04202,HG04206,HG04209,HG04210,HG04211,HG04212,HG04214,HG04216,HG04219,HG04222,HG04225,HG04227,HG04229,HG04235,HG04238,HG04239,NA06984,NA06985,NA06986,NA06989,NA06994,NA07000,NA07037,NA07048,NA07051,NA07056,NA07347,NA07357,NA10847,NA10851,NA11829,NA11830,NA11831,NA11832,NA11840,NA11843,NA11881,NA11892,NA11893,NA11894,NA11918,NA11919,NA11920,NA11930,NA11931,NA11932,NA11933,NA11992,NA11994,NA11995,NA12003,NA12004,NA12005,NA12006,NA12043,NA12044,NA12045,NA12046,NA12058,NA12144,NA12154,NA12155,NA12156,NA12234,NA12249,NA12272,NA12273,NA12275,NA12282,NA12283,NA12286,NA12287,NA12340,NA12341,NA12342,NA12347,NA12348,NA12383,NA12399,NA12400,NA12413,NA12414,NA12489,NA12546,NA12716,NA12717,NA12718,NA12748,NA12749,NA12750,NA12751,NA12760,NA12761,NA12762,NA12763,NA12775,NA12776,NA12777,NA12778,NA12812,NA12813,NA12814,NA12815,NA12827,NA12828,NA12829,NA12830,NA12842,NA12843,NA12872,NA12873,NA12874,NA12878,NA12889,NA12890,NA18486,NA18488,NA18489,NA18498,NA18499,NA18501,NA18502,NA18504,NA18505,NA18507,NA18508,NA18510,NA18511,NA18516,NA18517,NA18519,NA18520,NA18522,NA18523,NA18525,NA18526,NA18528,NA18530,NA18531,NA18532,NA18533,NA18534,NA18535,NA18536,NA18537,NA18538,NA18539,NA18541,NA18542,NA18543,NA18544,NA18545,NA18546,NA18547,NA18548,NA18549,NA18550,NA18552,NA18553,NA18555,NA18557,NA18558,NA18559,NA18560,NA18561,NA18562,NA18563,NA18564,NA18565,NA18566,NA18567,NA18570,NA18571,NA18572,NA18573,NA18574,NA18577,NA18579,NA18582,NA18591,NA18592,NA18593,NA18595,NA18596,NA18597,NA18599,NA18602,NA18603,NA18605,NA18606,NA18608,NA18609,NA18610,NA18611,NA18612,NA18613,NA18614,NA18615,NA18616,NA18617,NA18618,NA18619,NA18620,NA18621,NA18622,NA18623,NA18624,NA18625,NA18626,NA18627,NA18628,NA18629,NA18630,NA18631,NA18632,NA18633,NA18634,NA18635,NA18636,NA18637,NA18638,NA18639,NA18640,NA18641,NA18642,NA18643,NA18644,NA18645,NA18646,NA18647,NA18648,NA18740,NA18745,NA18747,NA18748,NA18749,NA18757,NA18853,NA18856,NA18858,NA18861,NA18864,NA18865,NA18867,NA18868,NA18870,NA18871,NA18873,NA18874,NA18876,NA18877,NA18878,NA18879,NA18881,NA18907,NA18908,NA18909,NA18910,NA18912,NA18915,NA18916,NA18917,NA18923,NA18924,NA18933,NA18934,NA18939,NA18940,NA18941,NA18942,NA18943,NA18944,NA18945,NA18946,NA18947,NA18948,NA18949,NA18950,NA18951,NA18952,NA18953,NA18954,NA18956,NA18957,NA18959,NA18960,NA18961,NA18962,NA18963,NA18964,NA18965,NA18966,NA18967,NA18968,NA18969,NA18970,NA18971,NA18972,NA18973,NA18974,NA18975,NA18976,NA18977,NA18978,NA18979,NA18980,NA18981,NA18982,NA18983,NA18984,NA18985,NA18986,NA18987,NA18988,NA18989,NA18990,NA18991,NA18992,NA18993,NA18994,NA18995,NA18997,NA18998,NA18999,NA19000,NA19001,NA19002,NA19003,NA19004,NA19005,NA19006,NA19007,NA19009,NA19010,NA19011,NA19012,NA19017,NA19019,NA19020,NA19023,NA19024,NA19025,NA19026,NA19027,NA19028,NA19030,NA19031,NA19035,NA19036,NA19037,NA19038,NA19041,NA19042,NA19043,NA19054,NA19055,NA19056,NA19057,NA19058,NA19059,NA19060,NA19062,NA19063,NA19064,NA19065,NA19066,NA19067,NA19068,NA19070,NA19072,NA19074,NA19075,NA19076,NA19077,NA19078,NA19079,NA19080,NA19081,NA19082,NA19083,NA19084,NA19085,NA19086,NA19087,NA19088,NA19089,NA19090,NA19091,NA19092,NA19093,NA19095,NA19096,NA19098,NA19099,NA19102,NA19107,NA19108,NA19113,NA19114,NA19116,NA19117,NA19118,NA19119,NA19121,NA19129,NA19130,NA19131,NA19137,NA19138,NA19141,NA19143,NA19144,NA19146,NA19147,NA19149,NA19152,NA19153,NA19159,NA19160,NA19171,NA19172,NA19175,NA19184,NA19185,NA19189,NA19190,NA19197,NA19198,NA19200,NA19201,NA19204,NA19206,NA19207,NA19209,NA19210,NA19213,NA19214,NA19222,NA19223,NA19225,NA19235,NA19236,NA19238,NA19239,NA19247,NA19248,NA19256,NA19257,NA19307,NA19308,NA19309,NA19310,NA19312,NA19314,NA19315,NA19316,NA19317,NA19318,NA19319,NA19320,NA19321,NA19323,NA19324,NA19327,NA19328,NA19331,NA19332,NA19334,NA19338,NA19346,NA19347,NA19350,NA19351,NA19355,NA19360,NA19372,NA19374,NA19375,NA19376,NA19377,NA19378,NA19379,NA19380,NA19383,NA19384,NA19385,NA19390,NA19391,NA19393,NA19394,NA19395,NA19397,NA19399,NA19401,NA19403,NA19404,NA19428,NA19429,NA19430,NA19431,NA19434,NA19435,NA19436,NA19437,NA19438,NA19439,NA19440,NA19443,NA19445,NA19446,NA19448,NA19449,NA19451,NA19452,NA19454,NA19455,NA19456,NA19457,NA19461,NA19462,NA19463,NA19466,NA19467,NA19468,NA19471,NA19472,NA19473,NA19474,NA19475,NA19625,NA19648,NA19649,NA19651,NA19652,NA19654,NA19655,NA19657,NA19658,NA19661,NA19663,NA19664,NA19669,NA19670,NA19676,NA19678,NA19679,NA19681,NA19682,NA19684,NA19700,NA19701,NA19703,NA19704,NA19707,NA19711,NA19712,NA19713,NA19716,NA19717,NA19719,NA19720,NA19722,NA19723,NA19725,NA19726,NA19728,NA19729,NA19731,NA19732,NA19734,NA19735,NA19740,NA19741,NA19746,NA19747,NA19749,NA19750,NA19752,NA19755,NA19756,NA19758,NA19759,NA19761,NA19762,NA19764,NA19770,NA19771,NA19773,NA19774,NA19776,NA19777,NA19779,NA19780,NA19782,NA19783,NA19785,NA19786,NA19788,NA19789,NA19792,NA19794,NA19795,NA19818,NA19819,NA19834,NA19835,NA19900,NA19901,NA19904,NA19908,NA19909,NA19913,NA19914,NA19916,NA19917,NA19920,NA19921,NA19922,NA19923,NA19982,NA19984,NA20126,NA20127,NA20274,NA20276,NA20278,NA20281,NA20282,NA20287,NA20289,NA20291,NA20294,NA20296,NA20298,NA20299,NA20314,NA20317,NA20318,NA20320,NA20321,NA20332,NA20334,NA20339,NA20340,NA20342,NA20346,NA20348,NA20351,NA20355,NA20356,NA20357,NA20359,NA20362,NA20412,NA20502,NA20503,NA20504,NA20505,NA20506,NA20507,NA20508,NA20509,NA20510,NA20511,NA20512,NA20513,NA20514,NA20515,NA20516,NA20517,NA20518,NA20519,NA20520,NA20521,NA20522,NA20524,NA20525,NA20527,NA20528,NA20529,NA20530,NA20531,NA20532,NA20533,NA20534,NA20535,NA20536,NA20538,NA20539,NA20540,NA20541,NA20542,NA20543,NA20544,NA20581,NA20582,NA20585,NA20586,NA20587,NA20588,NA20589,NA20752,NA20753,NA20754,NA20755,NA20756,NA20757,NA20758,NA20759,NA20760,NA20761,NA20762,NA20763,NA20764,NA20765,NA20766,NA20767,NA20768,NA20769,NA20770,NA20771,NA20772,NA20773,NA20774,NA20775,NA20778,NA20783,NA20785,NA20786,NA20787,NA20790,NA20792,NA20795,NA20796,NA20797,NA20798,NA20799,NA20800,NA20801,NA20802,NA20803,NA20804,NA20805,NA20806,NA20807,NA20808,NA20809,NA20810,NA20811,NA20812,NA20813,NA20814,NA20815,NA20818,NA20819,NA20821,NA20822,NA20826,NA20827,NA20828,NA20832,NA20845,NA20846,NA20847,NA20849,NA20850,NA20851,NA20852,NA20853,NA20854,NA20856,NA20858,NA20859,NA20861,NA20862,NA20863,NA20864,NA20866,NA20867,NA20868,NA20869,NA20870,NA20872,NA20874,NA20875,NA20876,NA20877,NA20878,NA20881,NA20882,NA20884,NA20885,NA20886,NA20887,NA20888,NA20889,NA20890,NA20891,NA20892,NA20894,NA20895,NA20896,NA20897,NA20899,NA20900,NA20901,NA20902,NA20903,NA20904,NA20905,NA20906,NA20908,NA20910,NA20911,NA21086,NA21087,NA21088,NA21089,NA21090,NA21091,NA21092,NA21093,NA21094,NA21095,NA21097,NA21098,NA21099,NA21100,NA21101,NA21102,NA21103,NA21104,NA21105,NA21106,NA21107,NA21108,NA21109,NA21110,NA21111,NA21112,NA21113,NA21114,NA21115,NA21116,NA21117,NA21118,NA21119,NA21120,NA21122,NA21123,NA21124,NA21125,NA21126,NA21127,NA21128,NA21129,NA21130,NA21133,NA21135,NA21137,NA21141,NA21142,NA21143,NA21144,Total
+Transitions ,13,0,0,13,0,0,0,26,26,0,26,26,0,13,0,8,0,13,13,0,13,0,0,9,13,13,13,0,0,13,7,4,0,26,0,25,2,0,0,6,2,0,0,13,15,0,0,0,26,0,0,13,12,0,2,0,0,0,1,0,24,23,0,0,13,0,12,26,13,13,13,13,0,0,13,26,13,0,13,13,13,13,0,13,13,15,13,25,13,2,0,15,13,12,13,0,0,0,13,0,0,13,13,13,13,0,0,0,26,0,26,0,13,13,1,13,0,0,0,2,13,0,13,0,13,0,0,13,13,26,26,0,13,13,13,10,26,14,0,13,0,13,0,13,0,13,26,0,0,26,13,2,13,0,10,26,2,13,0,0,0,26,13,0,13,13,13,13,13,26,13,13,12,2,20,13,0,13,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,13,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,7,13,7,0,2,8,0,13,13,2,13,0,2,2,0,13,0,0,0,13,0,2,0,2,26,13,0,0,0,0,0,13,13,0,0,0,0,23,13,13,2,2,13,0,0,0,0,13,0,2,13,0,0,13,0,13,2,13,0,2,13,0,4,0,0,0,4,2,0,1,13,2,13,13,0,2,13,0,0,13,13,7,0,13,13,0,13,0,13,0,0,0,13,13,13,13,13,0,0,0,2,1,0,13,0,13,13,5,13,13,0,13,0,13,0,13,0,0,0,0,2,2,0,0,0,7,4,13,13,0,13,13,0,13,0,0,0,2,0,2,0,0,20,26,2,0,0,0,13,0,13,0,12,0,13,0,0,12,19,0,2,0,15,13,0,0,0,14,0,0,0,0,0,0,0,12,13,0,2,13,14,10,0,0,0,13,0,13,7,7,9,0,13,13,13,0,0,13,0,13,0,2,0,0,19,0,0,0,0,0,13,4,0,0,0,0,0,0,0,7,0,13,15,0,13,0,0,13,13,0,13,13,12,0,13,2,0,0,2,7,7,0,13,0,13,13,0,12,13,26,0,13,0,2,11,13,0,13,15,13,13,13,1,26,13,13,0,13,0,13,10,13,0,0,2,0,0,15,13,2,0,15,0,0,0,0,0,0,12,0,13,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,1,0,2,0,0,4,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,15,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,13,7,13,12,0,9,13,0,13,26,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,0,0,0,0,0,13,0,0,0,0,13,0,0,0,0,1,0,13,0,0,0,1,13,0,0,15,0,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,13,0,0,2,0,0,0,0,2,13,7,0,0,0,0,4,0,0,0,0,0,0,1,13,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,2,1,0,13,0,0,0,0,7,0,5,2,2,0,1,7,0,0,2,2,0,2,0,0,0,0,0,0,13,1,0,0,7,0,0,0,0,0,2,0,13,0,0,0,0,13,0,0,0,0,0,0,0,2,0,0,0,2,3,0,0,0,0,26,0,0,0,0,0,2,1,0,0,0,2,0,2,13,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,2,0,0,4,2,0,0,2,0,0,0,2,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,2,0,0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,2,2,0,7,0,0,0,1,0,0,0,0,0,2,0,0,0,1,0,0,0,0,0,2,0,4,0,0,0,0,1,2,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,7,0,0,1,2,0,0,0,0,0,0,2,0,2,0,0,7,0,2,0,0,0,0,2,0,0,7,2,0,0,0,1,2,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,2,0,2,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,2,2,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,7,13,0,0,0,0,0,0,0,0,0,0,13,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,7,13,0,2,0,0,0,0,0,7,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,13,0,0,0,13,0,0,13,0,0,0,1,0,0,13,0,0,0,0,0,0,0,0,10,13,0,0,0,0,0,0,0,0,0,0,2,0,26,13,0,0,0,13,0,0,2,13,13,2,0,7,13,26,0,13,10,0,0,7,2,2,0,26,0,13,13,13,13,0,13,13,12,2,13,26,2,13,1,13,0,13,13,13,15,13,13,0,12,15,13,13,0,0,26,13,0,14,13,13,13,0,0,15,13,2,13,13,0,13,0,7,2,13,7,10,13,0,13,0,13,13,13,0,0,26,13,20,13,0,8,0,13,13,0,13,0,0,0,0,2,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,13,0,1,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,12,0,0,0,0,2,0,0,0,0,0,2,0,2,2,0,0,0,0,2,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,13,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,2,0,0,0,1,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,2,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,4,0,0,0,0,0,2,0,0,0,0,0,0,7,2,2,2,0,0,0,0,0,0,2,0,2,0,13,2,0,0,0,0,13,1,0,0,0,0,0,5,0,0,0,0,0,0,0,0,6,0,0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,13,13,0,0,2,6,0,0,20,0,0,0,0,7,0,0,0,13,13,0,0,1,0,0,0,2,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,13,7,0,0,0,0,0,0,0,0,13,2,13,0,0,0,0,0,0,13,13,0,0,5,0,0,0,0,0,13,3,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,2,0,4,0,2,0,0,0,13,0,0,0,0,0,0,0,0,0,13,0,2,0,13,2,1,0,0,0,0,0,13,24,13,7,0,13,13,0,13,0,25,26,0,0,13,13,13,13,0,2,0,0,13,0,13,26,13,0,13,15,1,13,0,13,0,13,8,10,13,7,7,24,5,1,13,4,0,0,11,13,13,0,9,13,26,0,14,13,0,13,11,13,0,1,2,26,13,0,13,2,0,0,15,13,0,7,0,0,0,2,13,15,2,0,13,2,13,26,25,0,13,0,0,13,0,7,13,13,0,0,0,0,12,0,0,13,13,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,13,0,0,0,2,0,0,7,0,13,0,0,0,0,13,0,2,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,7,7,0,0,0,0,0,0,0,0,0,0,0,0,13,0,7,20,0,7,0,0,0,0,0,0,0,13,0,0,0,7,0,6690
+Transversions ,4,0,0,4,0,0,0,8,8,0,8,8,0,4,0,2,0,4,4,0,4,0,0,3,4,4,4,0,0,4,1,0,0,7,0,7,0,0,0,2,0,0,0,4,4,0,0,0,8,0,0,4,4,0,0,0,0,0,0,0,7,7,0,0,4,0,4,8,4,4,4,4,0,0,4,8,4,0,4,4,4,4,0,4,4,4,4,8,4,0,0,4,4,4,4,0,0,0,3,0,0,4,4,4,4,0,0,0,7,0,8,0,4,4,0,4,0,0,0,0,4,0,4,0,4,0,0,4,4,8,8,0,4,4,4,4,8,4,0,5,0,4,0,4,0,4,8,0,0,8,3,0,3,0,4,8,0,4,0,0,0,8,4,0,3,4,3,4,4,7,4,4,4,0,6,4,0,4,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,2,0,0,2,0,4,4,0,4,0,0,0,0,4,0,0,0,4,0,0,0,0,8,4,0,0,0,0,0,4,4,0,0,0,0,7,4,3,0,0,4,0,0,0,0,3,0,1,3,0,0,4,0,4,1,4,0,0,4,0,0,0,0,0,2,0,0,0,3,1,4,4,0,0,4,0,0,4,4,2,0,4,4,0,4,0,4,0,0,0,4,4,4,4,4,0,0,0,0,0,0,4,0,4,4,1,4,4,0,3,0,4,0,4,0,0,0,0,0,0,0,0,0,2,0,4,4,0,4,4,0,4,0,0,0,0,0,0,0,0,6,8,0,0,0,0,4,0,3,0,4,0,4,0,0,4,6,0,0,0,4,4,0,0,0,3,0,0,0,0,0,0,0,4,4,0,0,4,4,4,0,0,0,4,0,4,2,2,2,0,4,3,3,0,0,4,0,4,0,0,0,0,6,0,0,0,0,0,4,0,0,0,0,0,0,0,0,2,0,4,3,0,3,0,0,4,4,0,4,4,4,0,4,0,0,0,0,2,1,0,4,0,4,4,0,4,4,8,0,4,0,1,4,4,0,4,4,4,4,4,0,8,4,4,0,3,0,4,3,4,0,0,0,0,0,4,4,0,0,4,0,0,0,0,0,0,4,0,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,1,0,0,0,0,1,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,2,4,4,0,2,4,0,4,8,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,4,0,0,0,0,4,0,0,0,0,0,0,4,0,0,0,0,4,0,0,5,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,4,0,0,0,0,0,0,0,1,4,2,0,0,0,0,1,0,0,0,0,0,0,1,4,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,1,1,0,4,0,0,0,0,2,0,2,1,1,0,1,2,0,0,1,1,0,1,0,0,0,0,0,0,4,0,0,0,3,0,0,0,0,0,1,0,4,0,0,0,0,4,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,8,0,0,0,0,0,1,1,0,0,0,1,0,1,4,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,1,0,2,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,1,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,1,1,0,0,0,0,0,0,1,0,1,0,0,2,0,1,0,0,0,0,1,0,0,2,1,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,3,4,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,0,0,0,0,0,0,0,3,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,4,0,0,0,4,0,0,4,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,4,4,0,0,0,0,0,0,0,0,0,0,0,0,8,3,0,0,0,4,1,0,0,4,4,0,0,2,4,8,0,4,4,0,1,2,0,0,0,8,0,3,4,4,4,0,4,4,4,0,4,7,0,4,0,4,0,4,4,4,4,4,4,0,4,4,4,4,0,0,8,4,0,4,4,4,4,0,0,4,4,0,4,4,0,4,0,2,0,4,3,4,4,0,4,0,4,3,4,0,0,7,4,5,4,0,4,0,4,4,0,4,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,4,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,0,4,1,0,0,0,0,4,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,4,0,0,0,2,0,0,6,0,0,0,0,3,0,0,0,4,4,0,0,0,0,0,0,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,4,2,0,0,0,0,0,0,0,0,4,0,4,0,0,0,0,0,0,4,4,0,0,2,0,0,0,0,0,4,2,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,4,0,0,0,0,0,0,0,0,0,4,0,1,0,4,1,1,0,0,0,0,0,4,7,4,2,0,4,4,0,3,1,8,8,0,0,4,4,4,3,0,0,0,0,4,0,4,8,4,0,4,4,0,4,0,4,0,4,3,4,4,3,3,8,2,0,4,0,0,0,4,4,4,0,2,4,8,0,4,4,0,4,4,4,0,0,0,8,4,0,4,0,0,0,4,4,0,2,0,0,0,0,4,4,0,0,4,0,4,7,7,0,4,0,0,4,0,2,4,3,0,0,0,0,4,0,0,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,3,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,4,0,3,7,0,3,0,0,0,0,0,0,0,4,0,0,0,3,0,2027
+Ts/Tv ,3.250,NaN,NaN,3.250,NaN,NaN,NaN,3.250,3.250,NaN,3.250,3.250,NaN,3.250,NaN,4.000,NaN,3.250,3.250,NaN,3.250,NaN,NaN,3.000,3.250,3.250,3.250,NaN,NaN,3.250,7.000,Infinity,NaN,3.714,NaN,3.571,Infinity,NaN,NaN,3.000,Infinity,NaN,NaN,3.250,3.750,NaN,NaN,NaN,3.250,NaN,NaN,3.250,3.000,NaN,Infinity,NaN,NaN,NaN,Infinity,NaN,3.429,3.286,NaN,NaN,3.250,NaN,3.000,3.250,3.250,3.250,3.250,3.250,NaN,NaN,3.250,3.250,3.250,NaN,3.250,3.250,3.250,3.250,NaN,3.250,3.250,3.750,3.250,3.125,3.250,Infinity,NaN,3.750,3.250,3.000,3.250,NaN,NaN,NaN,4.333,NaN,NaN,3.250,3.250,3.250,3.250,NaN,NaN,NaN,3.714,NaN,3.250,NaN,3.250,3.250,Infinity,3.250,NaN,NaN,NaN,Infinity,3.250,NaN,3.250,NaN,3.250,NaN,NaN,3.250,3.250,3.250,3.250,NaN,3.250,3.250,3.250,2.500,3.250,3.500,NaN,2.600,NaN,3.250,NaN,3.250,NaN,3.250,3.250,NaN,NaN,3.250,4.333,Infinity,4.333,NaN,2.500,3.250,Infinity,3.250,NaN,NaN,NaN,3.250,3.250,NaN,4.333,3.250,4.333,3.250,3.250,3.714,3.250,3.250,3.000,Infinity,3.333,3.250,NaN,3.250,NaN,NaN,NaN,NaN,3.500,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,5.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,3.250,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,3.500,3.250,3.500,NaN,Infinity,4.000,NaN,3.250,3.250,Infinity,3.250,NaN,Infinity,Infinity,NaN,3.250,NaN,NaN,NaN,3.250,NaN,Infinity,NaN,Infinity,3.250,3.250,NaN,NaN,NaN,NaN,NaN,3.250,3.250,NaN,NaN,NaN,NaN,3.286,3.250,4.333,Infinity,Infinity,3.250,NaN,NaN,NaN,NaN,4.333,NaN,2.000,4.333,NaN,NaN,3.250,NaN,3.250,2.000,3.250,NaN,Infinity,3.250,NaN,Infinity,NaN,NaN,NaN,2.000,Infinity,NaN,Infinity,4.333,2.000,3.250,3.250,NaN,Infinity,3.250,NaN,NaN,3.250,3.250,3.500,NaN,3.250,3.250,NaN,3.250,NaN,3.250,NaN,NaN,NaN,3.250,3.250,3.250,3.250,3.250,NaN,NaN,NaN,Infinity,Infinity,NaN,3.250,NaN,3.250,3.250,5.000,3.250,3.250,NaN,4.333,NaN,3.250,NaN,3.250,NaN,NaN,NaN,NaN,Infinity,Infinity,NaN,NaN,NaN,3.500,Infinity,3.250,3.250,NaN,3.250,3.250,NaN,3.250,NaN,NaN,NaN,Infinity,NaN,Infinity,NaN,NaN,3.333,3.250,Infinity,NaN,NaN,NaN,3.250,NaN,4.333,NaN,3.000,NaN,3.250,NaN,NaN,3.000,3.167,NaN,Infinity,NaN,3.750,3.250,NaN,NaN,NaN,4.667,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.000,3.250,NaN,Infinity,3.250,3.500,2.500,NaN,NaN,NaN,3.250,NaN,3.250,3.500,3.500,4.500,NaN,3.250,4.333,4.333,NaN,NaN,3.250,NaN,3.250,NaN,Infinity,NaN,NaN,3.167,NaN,NaN,NaN,NaN,NaN,3.250,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.500,NaN,3.250,5.000,NaN,4.333,NaN,NaN,3.250,3.250,NaN,3.250,3.250,3.000,NaN,3.250,Infinity,NaN,NaN,Infinity,3.500,7.000,NaN,3.250,NaN,3.250,3.250,NaN,3.000,3.250,3.250,NaN,3.250,NaN,2.000,2.750,3.250,NaN,3.250,3.750,3.250,3.250,3.250,Infinity,3.250,3.250,3.250,NaN,4.333,NaN,3.250,3.333,3.250,NaN,NaN,Infinity,NaN,NaN,3.750,3.250,Infinity,NaN,3.750,NaN,NaN,NaN,NaN,NaN,NaN,3.000,NaN,3.250,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.333,NaN,1.000,NaN,Infinity,NaN,NaN,4.000,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.750,NaN,NaN,NaN,NaN,4.333,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.500,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,3.250,3.500,3.250,3.000,NaN,4.500,3.250,NaN,3.250,3.250,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.000,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,Infinity,NaN,3.250,NaN,NaN,NaN,Infinity,3.250,NaN,NaN,3.000,NaN,2.750,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,Infinity,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.500,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,2.000,3.250,3.500,NaN,NaN,NaN,NaN,4.000,NaN,NaN,NaN,NaN,NaN,NaN,1.000,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,2.000,1.000,NaN,3.250,NaN,NaN,NaN,NaN,3.500,NaN,2.500,2.000,2.000,NaN,1.000,3.500,NaN,NaN,2.000,2.000,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,3.250,Infinity,NaN,NaN,2.333,NaN,NaN,NaN,NaN,NaN,2.000,NaN,3.250,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,2.000,3.000,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,2.000,1.000,NaN,NaN,NaN,2.000,NaN,2.000,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,1.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,0.000,NaN,2.000,NaN,2.000,NaN,NaN,4.000,2.000,NaN,NaN,2.000,NaN,NaN,NaN,2.000,NaN,NaN,NaN,2.000,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,1.000,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,2.000,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,2.000,2.000,NaN,3.500,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,1.000,NaN,NaN,NaN,NaN,NaN,2.000,NaN,4.000,NaN,NaN,NaN,NaN,1.000,2.000,NaN,1.000,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,1.000,NaN,NaN,NaN,NaN,3.500,NaN,NaN,1.000,2.000,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,2.000,NaN,NaN,3.500,NaN,2.000,NaN,NaN,NaN,NaN,2.000,NaN,NaN,3.500,2.000,NaN,NaN,NaN,Infinity,2.000,NaN,Infinity,1.000,NaN,NaN,NaN,NaN,NaN,1.000,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,2.000,2.000,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,2.000,2.000,NaN,NaN,2.000,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,4.333,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.333,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,0.000,3.500,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.500,3.250,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,2.333,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,1.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,2.333,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.500,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,3.250,NaN,NaN,3.250,NaN,NaN,NaN,Infinity,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.500,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,3.250,4.333,NaN,NaN,NaN,3.250,0.000,NaN,Infinity,3.250,3.250,Infinity,NaN,3.500,3.250,3.250,NaN,3.250,2.500,NaN,0.000,3.500,Infinity,Infinity,NaN,3.250,NaN,4.333,3.250,3.250,3.250,NaN,3.250,3.250,3.000,Infinity,3.250,3.714,Infinity,3.250,Infinity,3.250,NaN,3.250,3.250,3.250,3.750,3.250,3.250,NaN,3.000,3.750,3.250,3.250,NaN,NaN,3.250,3.250,NaN,3.500,3.250,3.250,3.250,NaN,NaN,3.750,3.250,Infinity,3.250,3.250,NaN,3.250,NaN,3.500,Infinity,3.250,2.333,2.500,3.250,NaN,3.250,NaN,3.250,4.333,3.250,NaN,NaN,3.714,3.250,4.000,3.250,NaN,2.000,NaN,3.250,3.250,NaN,3.250,NaN,NaN,NaN,NaN,2.000,2.000,0.000,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,3.250,NaN,Infinity,4.333,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,3.000,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,2.000,NaN,2.000,2.000,NaN,NaN,NaN,NaN,2.000,NaN,2.000,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,6.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.500,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,1.000,NaN,NaN,NaN,NaN,NaN,4.000,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,7.000,2.000,2.000,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,2.000,NaN,3.250,2.000,NaN,NaN,NaN,NaN,3.250,Infinity,NaN,NaN,NaN,NaN,NaN,5.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,6.000,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,4.333,4.333,3.250,NaN,NaN,Infinity,3.000,NaN,NaN,3.333,NaN,NaN,NaN,NaN,2.333,NaN,NaN,NaN,3.250,3.250,NaN,NaN,Infinity,NaN,NaN,NaN,2.000,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,3.250,3.500,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,Infinity,3.250,NaN,NaN,NaN,NaN,NaN,NaN,3.250,3.250,NaN,NaN,2.500,NaN,NaN,NaN,NaN,NaN,3.250,1.500,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.000,NaN,NaN,NaN,Infinity,NaN,Infinity,NaN,4.000,NaN,2.000,NaN,NaN,NaN,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,2.000,NaN,3.250,2.000,1.000,NaN,NaN,NaN,NaN,NaN,3.250,3.429,3.250,3.500,NaN,3.250,3.250,NaN,4.333,0.000,3.125,3.250,NaN,NaN,3.250,3.250,3.250,4.333,NaN,Infinity,NaN,NaN,3.250,NaN,3.250,3.250,3.250,NaN,3.250,3.750,Infinity,3.250,NaN,3.250,NaN,3.250,2.667,2.500,3.250,2.333,2.333,3.000,2.500,Infinity,3.250,Infinity,NaN,NaN,2.750,3.250,3.250,NaN,4.500,3.250,3.250,NaN,3.500,3.250,NaN,3.250,2.750,3.250,NaN,Infinity,Infinity,3.250,3.250,NaN,3.250,Infinity,NaN,NaN,3.750,3.250,NaN,3.500,NaN,NaN,NaN,Infinity,3.250,3.750,Infinity,NaN,3.250,Infinity,3.250,3.714,3.571,NaN,3.250,NaN,NaN,3.250,NaN,3.500,3.250,4.333,NaN,NaN,NaN,NaN,3.000,NaN,NaN,3.250,3.250,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,3.250,NaN,NaN,NaN,Infinity,NaN,NaN,2.333,NaN,3.250,NaN,NaN,NaN,NaN,3.250,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,Infinity,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,2.333,NaN,NaN,NaN,NaN,NaN,2.333,2.333,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,2.333,2.857,NaN,2.333,NaN,NaN,NaN,NaN,NaN,NaN,NaN,3.250,NaN,NaN,NaN,2.333,NaN,3.300
+</pre>
+	<p>
+	<b>Only known variants</b> (i.e. the ones having a non-empty ID field):
+	<pre>No results available (empty input?)</pre>
+<p>
+
+<!--==========================================================================
+	Allele frequency
+	========================================================================== -->
+
+<hr> 
+<a name="alleleFreq">
+<center> <b> Allele frequency </b> <p> </center>
+
+	<img src="http://chart.apis.google.com/chart?cht=bvg&chbh=8,4,2&chs=800x300&chxt=y,y,x,x&chg=9.0,1.0,3,2&chxp=1,50.0|3,50.0&chtt=Allele+Frequency+%25&chxr=0,1.0,20.0|1,0.0,100.0|3,0.0,100.0&chxl=1:|Count|2:|9||||||||||25||||||||||35||||||||||45||||||||||55||||||||||65||||||||||75||||||||||85||||||||||95|||||100|3:|Alleles+frequency&chd=e:oUDNNcDNAAAAGaJmJmT1QpJmQpNcXCNcT1T1a4keT1utJmkerhkeeFututhRhReFa4hRa41weFa4rhoU1woUQpNcQpNckeT1eFeFXCeFNcke..XCa4XCeFa4a4GaJmT1QpT1hRJmkeoUQpa4JmJmAANceFNcXCGaJmDNJmNchRNc"><br>
+	<table class="histo">
+		<tr> <th width=15%>Min</th><td>9</td> </tr>
+		<tr> <th>Max</th><td>100</td> </tr>
+		<tr> <th>Mean</th><td>56.828</td> </tr>
+		<tr> <th>Median</th><td>55</td> </tr>
+		<tr> <th>Standard deviation</th><td>22.038</td> </tr>
+		<tr> <th>Values</th><td>9,10,11,12,16,18,20,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100</td> </tr>
+		<tr> <th>Count</th><td>13,2,5,2,1,1,3,4,4,7,6,4,6,5,8,5,7,7,9,12,7,15,4,12,14,12,10,15,15,11,11,10,9,11,9,17,10,9,14,13,17,13,6,5,6,5,12,7,10,10,8,10,5,12,20,8,9,8,10,9,9,3,4,7,6,7,11,4,12,13,6,9,4,4,1,5,10,5,8,3,4,2,4,5,11,5</td> </tr>
+		</tr>
+	</table>
+<p>
+	
+<!--==========================================================================
+	Allele Count
+	========================================================================== -->
+
+<hr> 
+<a name="alleleCount">
+<center> <b> Allele Count </b> <p> </center>
+	<img src="http://chart.apis.google.com/chart?cht=bvg&chbh=8,4,2&chs=800x300&chxt=y,y,x,x&chtt=Allele+Count&chxp=1,50.0|3,50.0&chxr=0,2.0,8.0|1,0.0,100.0|3,0.0,100.0&chxl=1:|Count|2:|469||||||||||||||||||||||||||||||1487||||||||||||||||||||||||||||||1933||||||||||||||||||||||||||||||2181||||||||||||||||||||||||||||||2515||||||||||||||||||||||||||||||2780||||||||||||||||||||||||||||||3201||||||||||||||||||||||||||||||3528||||||||||||||||||||||||||||||3967||||||||||||||||||||||||||||||4350|||||||||||||||||||||||||||||5007|3:|Allele+Count&chd=e:VHAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAKPAAVHAAAAAAAAAAAAAAAAAAKPAAAAAAAAKPAAAAKPAAKPAAAAAAKPKPAAAAAAKPKPAAKPKPKPAAAAAAAAAAAAAAKPAAKPAAAAAAKPAAAAAAAAAAAAAAKPAAAAVHAAAAAAKPKPKPAAAAAAAAAAAAKPAAAAAAAAAAAAAAAAAAKPAAAAAAAAAAKPAAAAAAAAAAAAKPAAKPVHKPKPAAAAVHAAAAAAVHAAAAAAAAKPAAAAKPAAKPAAAAAAAAKPAAAAAAKPAAAAAAKPAAVHAAKPAAVHKPAAAAAAKPAAAAAAAAAAAAKPAAAAAAAAAAKPAAAAKPAAAAAAAAKPAAAAKPAAAAAAAAAAAAAAKPAAAAKPAAKPAAKPAAKPAAAAVHAAAAAAAAKPAAAAAAAAAAAAAAKPAAKPAAAAAAKPAAAAKPAAAAAAAAAAAAAAKPAAAAAAAAAAAAAAAAAAAAKPAAAAAAAAAAVHAAAAAAAAAAAAKPAAAAAAAAAAAAAAAAKPKPAAAAAAAAAAAAAAAAAAKPVHAAAAAAAAKPKPAAAAAAAAAAAAAAAAAAAAAAAAAAVH.."><br>
+	<table class="histo">
+		<tr> <th width=15%>Min</th><td>468</td> </tr>
+		<tr> <th>Max</th><td>5,008</td> </tr>
+		<tr> <th>Mean</th><td>2,871.76</td> </tr>
+		<tr> <th>Median</th><td>2,769</td> </tr>
+		<tr> <th>Standard deviation</th><td>1,103.946</td> </tr>
+		<tr> <th>Values</th><td>468,470,471,476,482,483,484,487,488,507,509,574,576,577,578,582,613,614,829,933,1026,1034,1039,1105,1110,1119,1124,1178,1183,1184,1198,1212,1214,1218,1222,1237,1240,1248,1276,1279,1285,1297,1304,1321,1322,1334,1360,1363,1364,1375,1378,1393,1403,1409,1411,1420,1424,1455,1456,1468,1476,1477,1482,1492,1504,1517,1533,1535,1550,1558,1562,1573,1587,1591,1594,1600,1606,1625,1632,1635,1642,1660,1664,1679,1680,1684,1695,1699,1701,1703,1710,1718,1724,1726,1727,1734,1741,1748,1751,1768,1771,1773,1777,1784,1795,1807,1813,1814,1820,1821,1827,1831,1832,1835,1839,1841,1843,1847,1857,1863,1894,1899,1912,1919,1932,1934,1945,1946,1948,1949,1951,1952,1957,1963,1968,1971,1972,1973,1974,1979,1984,1992,1993,1997,1999,2000,2008,2009,2012,2013,2022,2029,2035,2038,2040,2047,2053,2059,2070,2080,2082,2084,2085,2095,2099,2112,2118,2121,2122,2132,2136,2139,2141,2142,2145,2146,2147,2148,2156,2158,2159,2161,2163,2165,2167,2173,2178,2185,2187,2190,2197,2200,2208,2212,2223,2231,2236,2237,2238,2239,2242,2251,2252,2255,2260,2262,2266,2268,2271,2272,2273,2281,2282,2292,2305,2314,2319,2330,2332,2334,2338,2341,2342,2356,2360,2363,2373,2374,2377,2384,2387,2388,2405,2407,2412,2414,2423,2424,2450,2451,2453,2461,2485,2491,2495,2497,2499,2504,2513,2517,2520,2522,2529,2530,2534,2535,2541,2545,2551,2554,2570,2575,2580,2581,2583,2585,2590,2591,2592,2605,2606,2607,2623,2626,2635,2636,2637,2653,2657,2658,2667,2668,2669,2678,2680,2682,2684,2687,2697,2701,2710,2712,2714,2715,2717,2727,2729,2738,2744,2745,2753,2754,2758,2759,2760,2763,2769,2771,2774,2776,2782,2783,2787,2791,2803,2804,2806,2818,2820,2835,2836,2838,2842,2843,2845,2847,2857,2858,2865,2886,2897,2909,2913,2930,2941,2950,2963,2972,2974,2990,2992,3003,3011,3033,3037,3039,3043,3067,3070,3073,3075,3077,3085,3093,3097,3099,3102,3104,3122,3123,3134,3141,3152,3153,3165,3168,3172,3177,3184,3188,3193,3200,3202,3207,3211,3216,3218,3227,3232,3243,3249,3251,3253,3262,3270,3274,3276,3282,3290,3299,3305,3310,3319,3324,3326,3338,3341,3348,3351,3352,3381,3382,3394,3405,3415,3416,3419,3426,3430,3440,3442,3444,3445,3447,3457,3459,3463,3466,3471,3472,3473,3474,3477,3478,3480,3484,3488,3489,3494,3495,3498,3516,3519,3522,3534,3538,3540,3543,3548,3557,3569,3572,3582,3583,3585,3594,3597,3603,3610,3621,3623,3631,3636,3647,3648,3666,3667,3668,3669,3672,3685,3696,3698,3699,3709,3724,3729,3732,3734,3741,3748,3751,3759,3764,3772,3777,3782,3783,3793,3796,3799,3818,3835,3838,3869,3877,3879,3886,3909,3911,3919,3922,3924,3935,3956,3962,3973,3979,3992,4000,4003,4008,4051,4052,4053,4054,4055,4061,4066,4068,4075,4077,4080,4081,4084,4092,4099,4113,4130,4141,4147,4163,4165,4168,4173,4177,4180,4185,4190,4196,4202,4206,4209,4222,4228,4232,4236,4238,4239,4240,4243,4248,4249,4254,4255,4261,4264,4269,4272,4298,4303,4310,4313,4319,4333,4334,4339,4350,4351,4385,4390,4393,4402,4411,4415,4453,4455,4469,4518,4523,4533,4555,4560,4563,4574,4575,4580,4582,4586,4588,4609,4617,4631,4632,4638,4659,4663,4665,4676,4683,4693,4704,4744,4751,4755,4767,4787,4799,4800,4825,4834,4866,4883,4893,4899,4912,4937,4946,4953,4956,4965,4973,4975,4983,4998,5006,5007,5008</td> </tr>
+		<tr> <th>Count</th><td>1,2,1,1,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,2,1,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,2,2,1,2,1,1,1,1,1,1,3,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,1,1,3,1,1,2,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,3,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,5</td> </tr>
+		</tr>
+	</table>
+<p>
+
+
+<!--==========================================================================
+	Hom/Het table
+	========================================================================== -->
+
+<hr> 
+<a name="homHet">
+<center> <b> Hom/Het per sample </b> <p> </center>
+	<img src="http://chart.apis.google.com/chart?cht=bvg&chbh=8,4,2&chs=800x300&chxt=y,y,x,x&chxp=1,50.0|3,50.0&chg=249.0,100.0,3,2&chtt=Heterozygous+genotypes&chxr=0,1697.0,2698.0|1,0.0,100.0|3,0.0,100.0&chxl=1:|Heterozygous+count|2:|4||||||||||||||||||||||||||||||254||||||||||||||||||||||||||||||505||||||||||||||||||||||||||||||755||||||||||||||||||||||||||||||1005||||||||||||||||||||||||||||||1256||||||||||||||||||||||||||||||1506||||||||||||||||||||||||||||||1757||||||||||||||||||||||||||||||2007||||||||||||||||||||||||||||||2257|||||||||||||||||||||||||||||2499|3:|Sample+number&chd=e:v.fXxRh6goz1euij8Jo9q41HhRijuEijgowohRfX49ijJmaPKPTNEfQASkD2KPgAMKCkXrWZTNXCaPnr5mijeu1Hkej11HmZnr3rjM5mh6bh-ElwpmyjnrjMz1kenCq4HCgoz1kelH7go9qP6OlHJmT1AAUeD2I9euT1MKdcNcK4cKLhHrWZLhIUcKFIKPczHCKPUeCk3CeFKPQpOuOueuOFEfYUJmHCj1IUSkoUIUK4VwR7QAXrZmUenCQAgoa4VwpmMKD2aPLhJmUeD2XCgoJmHCaPFxFxRSFIGaTNXCFxR7HCVHJmJmTNGaLhZmHrI9mZT1dcsKcKVwo9XCT1jMfXcKpmY9utVwQppmdcdctbfXdcsKgAXCoUczT1o9bha4oUbheFsKa4Xr2Zlw..nro93rkepm49lHqPfXEfFxT1IULhQpHCK4T1EfMKVwKPJmVwGaWZI9I9RSD2EfVHJmHCWZLhK4YUKPHCa4HCGaXCHCI9XCFxXCKPK4euK4LhY9I9MKijfXbhqPa4OFszXCXCvWMzVwnrbhTNqPnC0ej1qP1Ho9mZ63ijlH4Unrdcv.dcdcxRa4euuEa4ZmlHY9a4"><br>
+	<img src="http://chart.apis.google.com/chart?cht=bvg&chbh=8,4,2&chs=800x300&chxt=y,y,x,x&chxp=1,50.0|3,50.0&chg=249.0,67.0,3,2&chtt=Homozygous+%28ALT%29+genotypes&chxr=0,1932.0,2603.0|1,0.0,100.0|3,0.0,100.0&chxl=1:|Homozygous+count|2:|4||||||||||||||||||||||||||||||254||||||||||||||||||||||||||||||505||||||||||||||||||||||||||||||755||||||||||||||||||||||||||||||1005||||||||||||||||||||||||||||||1256||||||||||||||||||||||||||||||1506||||||||||||||||||||||||||||||1757||||||||||||||||||||||||||||||2007||||||||||||||||||||||||||||||2257|||||||||||||||||||||||||||||2499|3:|Sample+number&chd=e:zMVHx6UeT1qPXCOukeLhOFo9SkVwszVHTNwoTNVHsKLhaPtbUe3reFYU5mczaPszTNbh3CZmWZzMQAMKoUNcRStbK4NcmZKPMKkeT1nCQANchRLhLhj1MKNcoURSK4pmeFR7z1NcT1ijOFIUjMQpa463eFz1gAa4szYUa40eVHczx6gogo3rYUWZv.cKcKzMaPcKz1bhmZczZm7gaPYUz1WZczvWVweutbgobhsza4eF63VHYU49RSR7o9Y9yjJmOukecKjM1wcKa449j1Lhx6czij1wjMij8JeujM..R7ij-EcK63gAgo6Oh6dc49h6h6o9SkMKjMHrQAnCJmSkoUI9I9h6OFhRMzSkj1CkJmoUAAI9h6K4QApmLhPXkeI9IUijOFHrhRNcaPjMMzgoQAK4oUQpKPnCK4Lhyjkeeu49cKVH.WczWZzMcKWZ3CaPa44Uke49a4Y97ggAgAz1a4Zm63a4cz2ZYUY9vWeuij6OeueF5meF6Odcbh1weFgA1wgAczxRSkR7qPOucKpmTNXrnCXrVwszRSYUtbR7q4R7KPv.OuRSkeLhOFv.JmSkfXJmLhh6MKEfczHrOuq4MzK4"><br>
+	<img src="http://chart.apis.google.com/chart?cht=bvg&chbh=8,4,2&chs=800x300&chxt=y,y,x,x&chxp=1,50.0|3,50.0&chtt=Missing+genotypes&chxr=0,0.0,0.0|1,0.0,100.0|3,0.0,100.0&chxl=1:|Missing+count|2:|4||||||||||||||||||||||||||||||254||||||||||||||||||||||||||||||505||||||||||||||||||||||||||||||755||||||||||||||||||||||||||||||1005||||||||||||||||||||||||||||||1256||||||||||||||||||||||||||||||1506||||||||||||||||||||||||||||||1757||||||||||||||||||||||||||||||2007||||||||||||||||||||||||||||||2257|||||||||||||||||||||||||||||2499|3:|Sample+number&chd=e:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"><br>
+	
+	<pre>Sample_names , HG00096, HG00097, HG00099, HG00100, HG00101, HG00102, HG00103, HG00105, HG00106, HG00107, HG00108, HG00109, HG00110, HG00111, HG00112, HG00113, HG00114, HG00115, HG00116, HG00117, HG00118, HG00119, HG00120, HG00121, HG00122, HG00123, HG00125, HG00126, HG00127, HG00128, HG00129, HG00130, HG00131, HG00132, HG00133, HG00136, HG00137, HG00138, HG00139, HG00140, HG00141, HG00142, HG00143, HG00145, HG00146, HG00148, HG00149, HG00150, HG00151, HG00154, HG00155, HG00157, HG00158, HG00159, HG00160, HG00171, HG00173, HG00174, HG00176, HG00177, HG00178, HG00179, HG00180, HG00181, HG00182, HG00183, HG00185, HG00186, HG00187, HG00188, HG00189, HG00190, HG00231, HG00232, HG00233, HG00234, HG00235, HG00236, HG00237, HG00238, HG00239, HG00240, HG00242, HG00243, HG00244, HG00245, HG00246, HG00250, HG00251, HG00252, HG00253, HG00254, HG00255, HG00256, HG00257, HG00258, HG00259, HG00260, HG00261, HG00262, HG00263, HG00264, HG00265, HG00266, HG00267, HG00268, HG00269, HG00271, HG00272, HG00273, HG00274, HG00275, HG00276, HG00277, HG00278, HG00280, HG00281, HG00282, HG00284, HG00285, HG00288, HG00290, HG00304, HG00306, HG00308, HG00309, HG00310, HG00311, HG00313, HG00315, HG00318, HG00319, HG00320, HG00321, HG00323, HG00324, HG00325, HG00326, HG00327, HG00328, HG00329, HG00330, HG00331, HG00332, HG00334, HG00335, HG00336, HG00337, HG00338, HG00339, HG00341, HG00342, HG00343, HG00344, HG00345, HG00346, HG00349, HG00350, HG00351, HG00353, HG00355, HG00356, HG00357, HG00358, HG00360, HG00361, HG00362, HG00364, HG00365, HG00366, HG00367, HG00368, HG00369, HG00371, HG00372, HG00373, HG00375, HG00376, HG00378, HG00379, HG00380, HG00381, HG00382, HG00383, HG00384, HG00403, HG00404, HG00406, HG00407, HG00409, HG00410, HG00419, HG00421, HG00422, HG00428, HG00436, HG00437, HG00442, HG00443, HG00445, HG00446, HG00448, HG00449, HG00451, HG00452, HG00457, HG00458, HG00463, HG00464, HG00472, HG00473, HG00475, HG00476, HG00478, HG00479, HG00500, HG00513, HG00524, HG00525, HG00530, HG00531, HG00533, HG00534, HG00536, HG00537, HG00542, HG00543, HG00551, HG00553, HG00554, HG00556, HG00557, HG00559, HG00560, HG00565, HG00566, HG00580, HG00581, HG00583, HG00584, HG00589, HG00590, HG00592, HG00593, HG00595, HG00596, HG00598, HG00599, HG00607, HG00608, HG00610, HG00611, HG00613, HG00614, HG00619, HG00620, HG00622, HG00623, HG00625, HG00626, HG00628, HG00629, HG00631, HG00632, HG00634, HG00637, HG00638, HG00640, HG00641, HG00650, HG00651, HG00653, HG00654, HG00656, HG00657, HG00662, HG00663, HG00671, HG00672, HG00674, HG00675, HG00683, HG00684, HG00689, HG00690, HG00692, HG00693, HG00698, HG00699, HG00701, HG00704, HG00705, HG00707, HG00708, HG00717, HG00728, HG00729, HG00731, HG00732, HG00734, HG00736, HG00737, HG00739, HG00740, HG00742, HG00743, HG00759, HG00766, HG00844, HG00851, HG00864, HG00867, HG00879, HG00881, HG00956, HG00978, HG00982, HG01028, HG01029, HG01031, HG01046, HG01047, HG01048, HG01049, HG01051, HG01052, HG01054, HG01055, HG01058, HG01060, HG01061, HG01063, HG01064, HG01066, HG01067, HG01069, HG01070, HG01072, HG01073, HG01075, HG01077, HG01079, HG01080, HG01082, HG01083, HG01085, HG01086, HG01088, HG01089, HG01092, HG01094, HG01095, HG01097, HG01098, HG01101, HG01102, HG01104, HG01105, HG01107, HG01108, HG01110, HG01111, HG01112, HG01113, HG01119, HG01121, HG01122, HG01124, HG01125, HG01130, HG01131, HG01133, HG01134, HG01136, HG01137, HG01139, HG01140, HG01142, HG01148, HG01149, HG01161, HG01162, HG01164, HG01167, HG01168, HG01170, HG01171, HG01173, HG01174, HG01176, HG01177, HG01182, HG01183, HG01187, HG01188, HG01190, HG01191, HG01197, HG01198, HG01200, HG01204, HG01205, HG01241, HG01242, HG01247, HG01248, HG01250, HG01251, HG01253, HG01254, HG01256, HG01257, HG01259, HG01260, HG01269, HG01271, HG01272, HG01275, HG01277, HG01280, HG01281, HG01284, HG01286, HG01302, HG01303, HG01305, HG01308, HG01311, HG01312, HG01323, HG01325, HG01326, HG01334, HG01341, HG01342, HG01344, HG01345, HG01348, HG01350, HG01351, HG01353, HG01354, HG01356, HG01357, HG01359, HG01360, HG01362, HG01363, HG01365, HG01366, HG01369, HG01372, HG01374, HG01375, HG01377, HG01378, HG01383, HG01384, HG01389, HG01390, HG01392, HG01393, HG01395, HG01396, HG01398, HG01402, HG01403, HG01405, HG01412, HG01413, HG01414, HG01431, HG01432, HG01435, HG01437, HG01438, HG01440, HG01441, HG01443, HG01444, HG01447, HG01455, HG01456, HG01459, HG01461, HG01462, HG01464, HG01465, HG01468, HG01474, HG01479, HG01485, HG01486, HG01488, HG01489, HG01491, HG01492, HG01494, HG01495, HG01497, HG01498, HG01500, HG01501, HG01503, HG01504, HG01506, HG01507, HG01509, HG01510, HG01512, HG01513, HG01515, HG01516, HG01518, HG01519, HG01521, HG01522, HG01524, HG01525, HG01527, HG01528, HG01530, HG01531, HG01536, HG01537, HG01550, HG01551, HG01556, HG01565, HG01566, HG01571, HG01572, HG01577, HG01578, HG01583, HG01586, HG01589, HG01593, HG01595, HG01596, HG01597, HG01598, HG01599, HG01600, HG01602, HG01603, HG01605, HG01606, HG01607, HG01608, HG01610, HG01612, HG01613, HG01615, HG01617, HG01618, HG01619, HG01620, HG01623, HG01624, HG01625, HG01626, HG01628, HG01630, HG01631, HG01632, HG01668, HG01669, HG01670, HG01672, HG01673, HG01675, HG01676, HG01678, HG01679, HG01680, HG01682, HG01684, HG01685, HG01686, HG01694, HG01695, HG01697, HG01699, HG01700, HG01702, HG01704, HG01705, HG01707, HG01708, HG01709, HG01710, HG01746, HG01747, HG01756, HG01757, HG01761, HG01762, HG01765, HG01766, HG01767, HG01768, HG01770, HG01771, HG01773, HG01775, HG01776, HG01777, HG01779, HG01781, HG01783, HG01784, HG01785, HG01786, HG01789, HG01790, HG01791, HG01794, HG01795, HG01796, HG01797, HG01798, HG01799, HG01800, HG01801, HG01802, HG01804, HG01805, HG01806, HG01807, HG01808, HG01809, HG01810, HG01811, HG01812, HG01813, HG01815, HG01816, HG01817, HG01840, HG01841, HG01842, HG01843, HG01844, HG01845, HG01846, HG01847, HG01848, HG01849, HG01850, HG01851, HG01852, HG01853, HG01855, HG01857, HG01858, HG01859, HG01860, HG01861, HG01862, HG01863, HG01864, HG01865, HG01866, HG01867, HG01868, HG01869, HG01870, HG01871, HG01872, HG01873, HG01874, HG01878, HG01879, HG01880, HG01882, HG01883, HG01885, HG01886, HG01889, HG01890, HG01892, HG01893, HG01894, HG01896, HG01912, HG01914, HG01915, HG01917, HG01918, HG01920, HG01921, HG01923, HG01924, HG01926, HG01927, HG01932, HG01933, HG01935, HG01936, HG01938, HG01939, HG01941, HG01942, HG01944, HG01945, HG01947, HG01948, HG01950, HG01951, HG01953, HG01954, HG01956, HG01958, HG01961, HG01965, HG01967, HG01968, HG01970, HG01971, HG01973, HG01974, HG01976, HG01977, HG01979, HG01980, HG01982, HG01985, HG01986, HG01988, HG01989, HG01990, HG01991, HG01992, HG01997, HG02002, HG02003, HG02006, HG02008, HG02009, HG02010, HG02012, HG02013, HG02014, HG02016, HG02017, HG02019, HG02020, HG02023, HG02025, HG02026, HG02028, HG02029, HG02031, HG02032, HG02035, HG02040, HG02047, HG02048, HG02049, HG02050, HG02051, HG02052, HG02053, HG02054, HG02057, HG02058, HG02060, HG02061, HG02064, HG02067, HG02069, HG02070, HG02072, HG02073, HG02075, HG02076, HG02078, HG02079, HG02081, HG02082, HG02084, HG02085, HG02086, HG02087, HG02088, HG02089, HG02090, HG02095, HG02102, HG02104, HG02105, HG02107, HG02108, HG02111, HG02113, HG02116, HG02121, HG02122, HG02127, HG02128, HG02130, HG02131, HG02133, HG02134, HG02136, HG02137, HG02138, HG02139, HG02140, HG02141, HG02142, HG02143, HG02144, HG02146, HG02147, HG02150, HG02151, HG02152, HG02153, HG02154, HG02155, HG02156, HG02164, HG02165, HG02166, HG02178, HG02179, HG02180, HG02181, HG02182, HG02184, HG02185, HG02186, HG02187, HG02188, HG02190, HG02215, HG02219, HG02220, HG02221, HG02223, HG02224, HG02230, HG02231, HG02232, HG02233, HG02235, HG02236, HG02238, HG02239, HG02250, HG02252, HG02253, HG02255, HG02256, HG02259, HG02260, HG02262, HG02265, HG02266, HG02271, HG02272, HG02274, HG02275, HG02277, HG02278, HG02281, HG02282, HG02283, HG02284, HG02285, HG02286, HG02291, HG02292, HG02298, HG02299, HG02301, HG02304, HG02307, HG02308, HG02309, HG02312, HG02314, HG02315, HG02317, HG02318, HG02322, HG02323, HG02325, HG02330, HG02332, HG02334, HG02337, HG02339, HG02343, HG02345, HG02348, HG02351, HG02353, HG02355, HG02356, HG02360, HG02364, HG02367, HG02371, HG02373, HG02374, HG02375, HG02379, HG02380, HG02382, HG02383, HG02384, HG02385, HG02386, HG02389, HG02390, HG02391, HG02392, HG02394, HG02395, HG02396, HG02397, HG02398, HG02399, HG02401, HG02402, HG02406, HG02407, HG02408, HG02409, HG02410, HG02419, HG02420, HG02425, HG02427, HG02429, HG02433, HG02439, HG02442, HG02445, HG02449, HG02450, HG02455, HG02461, HG02462, HG02464, HG02465, HG02470, HG02471, HG02476, HG02477, HG02479, HG02481, HG02484, HG02485, HG02489, HG02490, HG02491, HG02493, HG02494, HG02496, HG02497, HG02501, HG02502, HG02505, HG02508, HG02511, HG02512, HG02513, HG02521, HG02522, HG02536, HG02537, HG02541, HG02545, HG02546, HG02549, HG02554, HG02555, HG02557, HG02558, HG02561, HG02562, HG02568, HG02570, HG02571, HG02573, HG02574, HG02577, HG02580, HG02582, HG02583, HG02585, HG02586, HG02588, HG02589, HG02594, HG02595, HG02597, HG02600, HG02601, HG02603, HG02604, HG02610, HG02611, HG02613, HG02614, HG02620, HG02621, HG02623, HG02624, HG02628, HG02629, HG02634, HG02635, HG02642, HG02643, HG02645, HG02646, HG02648, HG02649, HG02651, HG02652, HG02654, HG02655, HG02657, HG02658, HG02660, HG02661, HG02666, HG02667, HG02675, HG02676, HG02678, HG02679, HG02681, HG02682, HG02684, HG02685, HG02687, HG02688, HG02690, HG02691, HG02694, HG02696, HG02697, HG02699, HG02700, HG02702, HG02703, HG02715, HG02716, HG02721, HG02722, HG02724, HG02725, HG02727, HG02728, HG02731, HG02733, HG02734, HG02736, HG02737, HG02756, HG02757, HG02759, HG02760, HG02763, HG02768, HG02769, HG02771, HG02772, HG02774, HG02775, HG02778, HG02780, HG02783, HG02784, HG02786, HG02787, HG02789, HG02790, HG02792, HG02793, HG02798, HG02799, HG02804, HG02805, HG02807, HG02808, HG02810, HG02811, HG02813, HG02814, HG02816, HG02817, HG02819, HG02820, HG02836, HG02837, HG02839, HG02840, HG02851, HG02852, HG02854, HG02855, HG02860, HG02861, HG02870, HG02878, HG02879, HG02881, HG02882, HG02884, HG02885, HG02887, HG02888, HG02890, HG02891, HG02895, HG02896, HG02922, HG02923, HG02938, HG02941, HG02943, HG02944, HG02946, HG02947, HG02952, HG02953, HG02968, HG02970, HG02971, HG02973, HG02974, HG02976, HG02977, HG02979, HG02981, HG02982, HG02983, HG03006, HG03007, HG03009, HG03012, HG03015, HG03016, HG03018, HG03019, HG03021, HG03022, HG03024, HG03025, HG03027, HG03028, HG03039, HG03040, HG03045, HG03046, HG03048, HG03049, HG03052, HG03054, HG03055, HG03057, HG03058, HG03060, HG03061, HG03063, HG03064, HG03066, HG03069, HG03072, HG03073, HG03074, HG03077, HG03078, HG03079, HG03081, HG03082, HG03084, HG03085, HG03086, HG03088, HG03091, HG03095, HG03096, HG03097, HG03099, HG03100, HG03103, HG03105, HG03108, HG03109, HG03111, HG03112, HG03114, HG03115, HG03117, HG03118, HG03120, HG03121, HG03123, HG03124, HG03126, HG03127, HG03129, HG03130, HG03132, HG03133, HG03135, HG03136, HG03139, HG03157, HG03159, HG03160, HG03162, HG03163, HG03166, HG03168, HG03169, HG03172, HG03175, HG03189, HG03190, HG03193, HG03195, HG03196, HG03198, HG03199, HG03202, HG03209, HG03212, HG03224, HG03225, HG03228, HG03229, HG03234, HG03235, HG03237, HG03238, HG03240, HG03241, HG03246, HG03247, HG03258, HG03259, HG03265, HG03267, HG03268, HG03270, HG03271, HG03279, HG03280, HG03291, HG03294, HG03295, HG03297, HG03298, HG03300, HG03301, HG03303, HG03304, HG03311, HG03313, HG03342, HG03343, HG03351, HG03352, HG03354, HG03363, HG03366, HG03367, HG03369, HG03370, HG03372, HG03376, HG03378, HG03380, HG03382, HG03385, HG03388, HG03391, HG03394, HG03397, HG03401, HG03410, HG03419, HG03428, HG03432, HG03433, HG03436, HG03437, HG03439, HG03442, HG03445, HG03446, HG03449, HG03451, HG03452, HG03455, HG03457, HG03458, HG03460, HG03461, HG03464, HG03469, HG03470, HG03472, HG03473, HG03476, HG03478, HG03479, HG03484, HG03485, HG03488, HG03490, HG03491, HG03499, HG03511, HG03514, HG03515, HG03517, HG03518, HG03520, HG03521, HG03538, HG03539, HG03547, HG03548, HG03556, HG03557, HG03558, HG03559, HG03563, HG03565, HG03567, HG03571, HG03572, HG03575, HG03577, HG03578, HG03583, HG03585, HG03589, HG03593, HG03594, HG03595, HG03598, HG03600, HG03603, HG03604, HG03607, HG03611, HG03615, HG03616, HG03619, HG03624, HG03625, HG03629, HG03631, HG03634, HG03636, HG03640, HG03642, HG03643, HG03644, HG03645, HG03646, HG03649, HG03652, HG03653, HG03660, HG03663, HG03667, HG03668, HG03672, HG03673, HG03679, HG03680, HG03681, HG03684, HG03685, HG03686, HG03687, HG03689, HG03690, HG03691, HG03692, HG03693, HG03694, HG03695, HG03696, HG03697, HG03698, HG03702, HG03703, HG03705, HG03706, HG03708, HG03709, HG03711, HG03713, HG03714, HG03716, HG03717, HG03718, HG03720, HG03722, HG03727, HG03729, HG03730, HG03731, HG03733, HG03736, HG03738, HG03740, HG03741, HG03742, HG03743, HG03744, HG03745, HG03746, HG03750, HG03752, HG03753, HG03754, HG03755, HG03756, HG03757, HG03760, HG03762, HG03765, HG03767, HG03770, HG03771, HG03772, HG03773, HG03774, HG03775, HG03777, HG03778, HG03779, HG03780, HG03781, HG03782, HG03784, HG03785, HG03786, HG03787, HG03788, HG03789, HG03790, HG03792, HG03793, HG03796, HG03800, HG03802, HG03803, HG03805, HG03808, HG03809, HG03812, HG03814, HG03815, HG03817, HG03821, HG03823, HG03824, HG03826, HG03829, HG03830, HG03832, HG03833, HG03836, HG03837, HG03838, HG03844, HG03846, HG03848, HG03849, HG03850, HG03851, HG03854, HG03856, HG03857, HG03858, HG03861, HG03862, HG03863, HG03864, HG03866, HG03867, HG03868, HG03869, HG03870, HG03871, HG03872, HG03873, HG03874, HG03875, HG03882, HG03884, HG03885, HG03886, HG03887, HG03888, HG03890, HG03894, HG03895, HG03896, HG03897, HG03898, HG03899, HG03900, HG03902, HG03905, HG03907, HG03908, HG03910, HG03911, HG03913, HG03914, HG03916, HG03917, HG03919, HG03920, HG03922, HG03925, HG03926, HG03928, HG03931, HG03934, HG03937, HG03940, HG03941, HG03943, HG03944, HG03945, HG03947, HG03949, HG03950, HG03951, HG03953, HG03955, HG03960, HG03963, HG03965, HG03967, HG03968, HG03969, HG03971, HG03973, HG03974, HG03976, HG03977, HG03978, HG03985, HG03986, HG03989, HG03990, HG03991, HG03995, HG03998, HG03999, HG04001, HG04002, HG04003, HG04006, HG04014, HG04015, HG04017, HG04018, HG04019, HG04020, HG04022, HG04023, HG04025, HG04026, HG04029, HG04033, HG04035, HG04038, HG04039, HG04042, HG04047, HG04054, HG04056, HG04059, HG04060, HG04061, HG04062, HG04063, HG04070, HG04075, HG04076, HG04080, HG04090, HG04093, HG04094, HG04096, HG04098, HG04099, HG04100, HG04106, HG04107, HG04118, HG04131, HG04134, HG04140, HG04141, HG04144, HG04146, HG04152, HG04153, HG04155, HG04156, HG04158, HG04159, HG04161, HG04162, HG04164, HG04171, HG04173, HG04176, HG04177, HG04180, HG04182, HG04183, HG04185, HG04186, HG04188, HG04189, HG04194, HG04195, HG04198, HG04200, HG04202, HG04206, HG04209, HG04210, HG04211, HG04212, HG04214, HG04216, HG04219, HG04222, HG04225, HG04227, HG04229, HG04235, HG04238, HG04239, NA06984, NA06985, NA06986, NA06989, NA06994, NA07000, NA07037, NA07048, NA07051, NA07056, NA07347, NA07357, NA10847, NA10851, NA11829, NA11830, NA11831, NA11832, NA11840, NA11843, NA11881, NA11892, NA11893, NA11894, NA11918, NA11919, NA11920, NA11930, NA11931, NA11932, NA11933, NA11992, NA11994, NA11995, NA12003, NA12004, NA12005, NA12006, NA12043, NA12044, NA12045, NA12046, NA12058, NA12144, NA12154, NA12155, NA12156, NA12234, NA12249, NA12272, NA12273, NA12275, NA12282, NA12283, NA12286, NA12287, NA12340, NA12341, NA12342, NA12347, NA12348, NA12383, NA12399, NA12400, NA12413, NA12414, NA12489, NA12546, NA12716, NA12717, NA12718, NA12748, NA12749, NA12750, NA12751, NA12760, NA12761, NA12762, NA12763, NA12775, NA12776, NA12777, NA12778, NA12812, NA12813, NA12814, NA12815, NA12827, NA12828, NA12829, NA12830, NA12842, NA12843, NA12872, NA12873, NA12874, NA12878, NA12889, NA12890, NA18486, NA18488, NA18489, NA18498, NA18499, NA18501, NA18502, NA18504, NA18505, NA18507, NA18508, NA18510, NA18511, NA18516, NA18517, NA18519, NA18520, NA18522, NA18523, NA18525, NA18526, NA18528, NA18530, NA18531, NA18532, NA18533, NA18534, NA18535, NA18536, NA18537, NA18538, NA18539, NA18541, NA18542, NA18543, NA18544, NA18545, NA18546, NA18547, NA18548, NA18549, NA18550, NA18552, NA18553, NA18555, NA18557, NA18558, NA18559, NA18560, NA18561, NA18562, NA18563, NA18564, NA18565, NA18566, NA18567, NA18570, NA18571, NA18572, NA18573, NA18574, NA18577, NA18579, NA18582, NA18591, NA18592, NA18593, NA18595, NA18596, NA18597, NA18599, NA18602, NA18603, NA18605, NA18606, NA18608, NA18609, NA18610, NA18611, NA18612, NA18613, NA18614, NA18615, NA18616, NA18617, NA18618, NA18619, NA18620, NA18621, NA18622, NA18623, NA18624, NA18625, NA18626, NA18627, NA18628, NA18629, NA18630, NA18631, NA18632, NA18633, NA18634, NA18635, NA18636, NA18637, NA18638, NA18639, NA18640, NA18641, NA18642, NA18643, NA18644, NA18645, NA18646, NA18647, NA18648, NA18740, NA18745, NA18747, NA18748, NA18749, NA18757, NA18853, NA18856, NA18858, NA18861, NA18864, NA18865, NA18867, NA18868, NA18870, NA18871, NA18873, NA18874, NA18876, NA18877, NA18878, NA18879, NA18881, NA18907, NA18908, NA18909, NA18910, NA18912, NA18915, NA18916, NA18917, NA18923, NA18924, NA18933, NA18934, NA18939, NA18940, NA18941, NA18942, NA18943, NA18944, NA18945, NA18946, NA18947, NA18948, NA18949, NA18950, NA18951, NA18952, NA18953, NA18954, NA18956, NA18957, NA18959, NA18960, NA18961, NA18962, NA18963, NA18964, NA18965, NA18966, NA18967, NA18968, NA18969, NA18970, NA18971, NA18972, NA18973, NA18974, NA18975, NA18976, NA18977, NA18978, NA18979, NA18980, NA18981, NA18982, NA18983, NA18984, NA18985, NA18986, NA18987, NA18988, NA18989, NA18990, NA18991, NA18992, NA18993, NA18994, NA18995, NA18997, NA18998, NA18999, NA19000, NA19001, NA19002, NA19003, NA19004, NA19005, NA19006, NA19007, NA19009, NA19010, NA19011, NA19012, NA19017, NA19019, NA19020, NA19023, NA19024, NA19025, NA19026, NA19027, NA19028, NA19030, NA19031, NA19035, NA19036, NA19037, NA19038, NA19041, NA19042, NA19043, NA19054, NA19055, NA19056, NA19057, NA19058, NA19059, NA19060, NA19062, NA19063, NA19064, NA19065, NA19066, NA19067, NA19068, NA19070, NA19072, NA19074, NA19075, NA19076, NA19077, NA19078, NA19079, NA19080, NA19081, NA19082, NA19083, NA19084, NA19085, NA19086, NA19087, NA19088, NA19089, NA19090, NA19091, NA19092, NA19093, NA19095, NA19096, NA19098, NA19099, NA19102, NA19107, NA19108, NA19113, NA19114, NA19116, NA19117, NA19118, NA19119, NA19121, NA19129, NA19130, NA19131, NA19137, NA19138, NA19141, NA19143, NA19144, NA19146, NA19147, NA19149, NA19152, NA19153, NA19159, NA19160, NA19171, NA19172, NA19175, NA19184, NA19185, NA19189, NA19190, NA19197, NA19198, NA19200, NA19201, NA19204, NA19206, NA19207, NA19209, NA19210, NA19213, NA19214, NA19222, NA19223, NA19225, NA19235, NA19236, NA19238, NA19239, NA19247, NA19248, NA19256, NA19257, NA19307, NA19308, NA19309, NA19310, NA19312, NA19314, NA19315, NA19316, NA19317, NA19318, NA19319, NA19320, NA19321, NA19323, NA19324, NA19327, NA19328, NA19331, NA19332, NA19334, NA19338, NA19346, NA19347, NA19350, NA19351, NA19355, NA19360, NA19372, NA19374, NA19375, NA19376, NA19377, NA19378, NA19379, NA19380, NA19383, NA19384, NA19385, NA19390, NA19391, NA19393, NA19394, NA19395, NA19397, NA19399, NA19401, NA19403, NA19404, NA19428, NA19429, NA19430, NA19431, NA19434, NA19435, NA19436, NA19437, NA19438, NA19439, NA19440, NA19443, NA19445, NA19446, NA19448, NA19449, NA19451, NA19452, NA19454, NA19455, NA19456, NA19457, NA19461, NA19462, NA19463, NA19466, NA19467, NA19468, NA19471, NA19472, NA19473, NA19474, NA19475, NA19625, NA19648, NA19649, NA19651, NA19652, NA19654, NA19655, NA19657, NA19658, NA19661, NA19663, NA19664, NA19669, NA19670, NA19676, NA19678, NA19679, NA19681, NA19682, NA19684, NA19700, NA19701, NA19703, NA19704, NA19707, NA19711, NA19712, NA19713, NA19716, NA19717, NA19719, NA19720, NA19722, NA19723, NA19725, NA19726, NA19728, NA19729, NA19731, NA19732, NA19734, NA19735, NA19740, NA19741, NA19746, NA19747, NA19749, NA19750, NA19752, NA19755, NA19756, NA19758, NA19759, NA19761, NA19762, NA19764, NA19770, NA19771, NA19773, NA19774, NA19776, NA19777, NA19779, NA19780, NA19782, NA19783, NA19785, NA19786, NA19788, NA19789, NA19792, NA19794, NA19795, NA19818, NA19819, NA19834, NA19835, NA19900, NA19901, NA19904, NA19908, NA19909, NA19913, NA19914, NA19916, NA19917, NA19920, NA19921, NA19922, NA19923, NA19982, NA19984, NA20126, NA20127, NA20274, NA20276, NA20278, NA20281, NA20282, NA20287, NA20289, NA20291, NA20294, NA20296, NA20298, NA20299, NA20314, NA20317, NA20318, NA20320, NA20321, NA20332, NA20334, NA20339, NA20340, NA20342, NA20346, NA20348, NA20351, NA20355, NA20356, NA20357, NA20359, NA20362, NA20412, NA20502, NA20503, NA20504, NA20505, NA20506, NA20507, NA20508, NA20509, NA20510, NA20511, NA20512, NA20513, NA20514, NA20515, NA20516, NA20517, NA20518, NA20519, NA20520, NA20521, NA20522, NA20524, NA20525, NA20527, NA20528, NA20529, NA20530, NA20531, NA20532, NA20533, NA20534, NA20535, NA20536, NA20538, NA20539, NA20540, NA20541, NA20542, NA20543, NA20544, NA20581, NA20582, NA20585, NA20586, NA20587, NA20588, NA20589, NA20752, NA20753, NA20754, NA20755, NA20756, NA20757, NA20758, NA20759, NA20760, NA20761, NA20762, NA20763, NA20764, NA20765, NA20766, NA20767, NA20768, NA20769, NA20770, NA20771, NA20772, NA20773, NA20774, NA20775, NA20778, NA20783, NA20785, NA20786, NA20787, NA20790, NA20792, NA20795, NA20796, NA20797, NA20798, NA20799, NA20800, NA20801, NA20802, NA20803, NA20804, NA20805, NA20806, NA20807, NA20808, NA20809, NA20810, NA20811, NA20812, NA20813, NA20814, NA20815, NA20818, NA20819, NA20821, NA20822, NA20826, NA20827, NA20828, NA20832, NA20845, NA20846, NA20847, NA20849, NA20850, NA20851, NA20852, NA20853, NA20854, NA20856, NA20858, NA20859, NA20861, NA20862, NA20863, NA20864, NA20866, NA20867, NA20868, NA20869, NA20870, NA20872, NA20874, NA20875, NA20876, NA20877, NA20878, NA20881, NA20882, NA20884, NA20885, NA20886, NA20887, NA20888, NA20889, NA20890, NA20891, NA20892, NA20894, NA20895, NA20896, NA20897, NA20899, NA20900, NA20901, NA20902, NA20903, NA20904, NA20905, NA20906, NA20908, NA20910, NA20911, NA21086, NA21087, NA21088, NA21089, NA21090, NA21091, NA21092, NA21093, NA21094, NA21095, NA21097, NA21098, NA21099, NA21100, NA21101, NA21102, NA21103, NA21104, NA21105, NA21106, NA21107, NA21108, NA21109, NA21110, NA21111, NA21112, NA21113, NA21114, NA21115, NA21116, NA21117, NA21118, NA21119, NA21120, NA21122, NA21123, NA21124, NA21125, NA21126, NA21127, NA21128, NA21129, NA21130, NA21133, NA21135, NA21137, NA21141, NA21142, NA21143, NA21144
+Reference , 128, 162, 151, 120, 146, 152, 173, 117, 142, 152, 171, 117, 140, 124, 160, 137, 174, 137, 132, 180, 129, 150, 165, 137, 131, 130, 160, 171, 148, 135, 151, 147, 126, 111, 155, 128, 153, 149, 144, 149, 134, 157, 148, 134, 120, 141, 161, 162, 150, 161, 155, 143, 141, 152, 139, 173, 147, 132, 140, 153, 131, 123, 182, 167, 132, 160, 146, 146, 143, 154, 123, 131, 163, 170, 123, 103, 105, 173, 128, 146, 135, 123, 176, 143, 112, 147, 128, 115, 130, 166, 151, 126, 120, 145, 137, 159, 153, 166, 151, 146, 149, 144, 135, 141, 134, 154, 162, 173, 135, 142, 123, 151, 116, 128, 169, 128, 166, 159, 162, 146, 134, 168, 138, 182, 139, 158, 153, 139, 129, 138, 149, 139, 137, 143, 136, 134, 161, 130, 134, 172, 176, 133, 169, 121, 155, 130, 139, 149, 155, 148, 149, 156, 154, 135, 160, 122, 166, 131, 149, 151, 172, 131, 158, 181, 145, 127, 115, 158, 123, 121, 131, 115, 146, 168, 131, 136, 176, 134, 150, 158, 160, 157, 154, 139, 180, 178, 191, 180, 187, 185, 191, 171, 201, 188, 188, 186, 188, 167, 177, 195, 201, 179, 189, 180, 186, 189, 202, 189, 202, 185, 192, 201, 193, 187, 175, 202, 184, 180, 226, 194, 173, 172, 196, 177, 181, 184, 193, 165, 134, 149, 176, 188, 186, 187, 185, 195, 186, 180, 193, 181, 184, 192, 192, 188, 197, 183, 199, 185, 185, 199, 189, 162, 187, 158, 183, 194, 190, 202, 175, 183, 196, 187, 197, 170, 200, 137, 184, 158, 125, 192, 196, 201, 211, 204, 182, 186, 181, 195, 180, 211, 202, 191, 201, 197, 182, 164, 181, 188, 181, 172, 196, 190, 182, 181, 207, 179, 168, 119, 125, 144, 147, 137, 158, 163, 150, 175, 186, 191, 198, 192, 184, 202, 184, 186, 190, 185, 188, 176, 181, 193, 191, 139, 155, 152, 149, 154, 112, 132, 161, 138, 141, 167, 162, 125, 155, 117, 143, 131, 149, 140, 128, 152, 146, 182, 154, 170, 151, 142, 156, 125, 125, 167, 146, 150, 154, 161, 131, 158, 160, 142, 169, 161, 134, 125, 152, 150, 149, 94, 152, 150, 141, 143, 144, 169, 165, 144, 164, 162, 173, 161, 116, 145, 125, 147, 144, 131, 153, 167, 161, 141, 152, 139, 165, 180, 168, 132, 154, 140, 125, 138, 145, 131, 157, 170, 128, 116, 137, 168, 141, 140, 150, 114, 142, 151, 143, 174, 149, 165, 119, 129, 122, 141, 148, 154, 161, 155, 146, 149, 141, 147, 136, 130, 128, 144, 151, 153, 147, 164, 115, 170, 137, 143, 160, 157, 163, 161, 162, 149, 156, 178, 191, 145, 153, 142, 141, 126, 132, 153, 121, 154, 155, 159, 162, 143, 144, 150, 142, 119, 127, 165, 129, 143, 137, 140, 128, 144, 148, 146, 183, 139, 165, 171, 137, 149, 175, 189, 149, 132, 115, 161, 145, 161, 96, 172, 156, 150, 151, 141, 142, 159, 134, 138, 152, 177, 146, 135, 125, 155, 158, 167, 138, 161, 157, 144, 135, 151, 129, 118, 136, 124, 171, 162, 130, 154, 132, 158, 138, 135, 188, 141, 178, 177, 153, 165, 196, 118, 219, 170, 189, 203, 193, 168, 206, 203, 129, 153, 128, 114, 181, 131, 151, 152, 136, 123, 162, 123, 114, 125, 143, 148, 155, 166, 175, 129, 146, 140, 146, 126, 163, 145, 129, 147, 132, 126, 138, 124, 152, 152, 141, 140, 139, 141, 144, 136, 140, 141, 120, 162, 149, 138, 127, 143, 115, 154, 123, 135, 132, 143, 150, 159, 148, 153, 153, 117, 147, 148, 105, 159, 155, 163, 140, 128, 155, 121, 136, 110, 156, 193, 195, 185, 172, 174, 183, 194, 157, 195, 188, 183, 188, 185, 199, 166, 189, 176, 178, 202, 203, 188, 202, 197, 200, 194, 191, 185, 204, 199, 204, 199, 152, 189, 180, 203, 196, 186, 183, 183, 196, 184, 181, 184, 173, 164, 172, 180, 200, 194, 219, 174, 189, 196, 186, 193, 182, 170, 163, 185, 167, 141, 138, 168, 190, 174, 182, 168, 165, 171, 155, 157, 159, 170, 203, 187, 212, 168, 205, 186, 189, 145, 166, 185, 201, 125, 186, 171, 158, 209, 132, 209, 200, 194, 165, 187, 172, 200, 175, 161, 167, 194, 176, 143, 186, 189, 210, 184, 181, 188, 159, 179, 163, 144, 146, 175, 173, 192, 198, 170, 213, 165, 181, 186, 162, 170, 175, 180, 183, 188, 198, 175, 170, 179, 179, 190, 187, 181, 179, 181, 182, 179, 181, 193, 184, 175, 188, 189, 167, 229, 184, 206, 163, 178, 187, 169, 193, 201, 185, 178, 189, 186, 190, 193, 184, 195, 174, 182, 213, 202, 174, 163, 185, 170, 184, 188, 164, 153, 180, 173, 180, 190, 194, 177, 167, 177, 198, 189, 184, 169, 190, 193, 192, 186, 196, 183, 177, 135, 179, 196, 193, 179, 151, 203, 240, 181, 187, 194, 202, 168, 192, 186, 194, 202, 196, 214, 199, 178, 190, 187, 182, 150, 131, 128, 130, 131, 161, 117, 141, 155, 118, 122, 145, 145, 111, 185, 161, 157, 193, 159, 175, 173, 226, 219, 181, 206, 214, 184, 194, 191, 205, 158, 166, 109, 192, 197, 177, 184, 207, 152, 168, 198, 161, 170, 160, 202, 164, 169, 180, 173, 198, 147, 193, 185, 166, 186, 127, 188, 153, 141, 172, 168, 192, 202, 197, 215, 203, 193, 170, 189, 182, 188, 191, 201, 192, 187, 218, 180, 191, 189, 185, 179, 183, 170, 196, 181, 193, 204, 202, 187, 184, 188, 188, 183, 201, 177, 202, 164, 151, 157, 168, 179, 168, 186, 167, 179, 167, 170, 179, 176, 165, 184, 184, 175, 188, 170, 156, 178, 172, 174, 151, 185, 134, 161, 167, 164, 173, 193, 189, 165, 145, 114, 171, 188, 195, 177, 175, 183, 187, 184, 190, 180, 181, 153, 192, 157, 161, 176, 204, 175, 182, 185, 188, 185, 178, 186, 170, 180, 181, 176, 182, 165, 182, 162, 171, 169, 178, 170, 188, 170, 188, 148, 163, 181, 194, 188, 167, 169, 172, 175, 172, 190, 188, 176, 178, 161, 176, 144, 174, 140, 161, 180, 164, 148, 180, 170, 175, 183, 179, 201, 177, 127, 164, 160, 176, 186, 171, 178, 163, 209, 163, 159, 166, 163, 184, 171, 186, 179, 168, 176, 178, 186, 184, 164, 118, 161, 161, 161, 161, 184, 161, 181, 203, 193, 170, 160, 206, 192, 140, 159, 175, 156, 148, 181, 164, 172, 174, 203, 195, 157, 175, 179, 178, 168, 176, 198, 161, 174, 176, 166, 192, 184, 182, 182, 199, 185, 159, 175, 180, 177, 198, 170, 184, 185, 182, 172, 178, 198, 176, 164, 182, 179, 161, 177, 170, 177, 192, 199, 185, 183, 174, 175, 181, 181, 180, 196, 187, 182, 189, 196, 191, 176, 176, 215, 178, 174, 160, 188, 182, 191, 165, 178, 191, 161, 175, 170, 157, 157, 189, 170, 174, 162, 183, 170, 182, 180, 175, 189, 190, 177, 183, 159, 187, 170, 170, 180, 182, 185, 175, 179, 172, 193, 193, 164, 187, 184, 172, 168, 181, 166, 177, 186, 180, 186, 157, 196, 170, 185, 174, 185, 197, 178, 177, 174, 177, 175, 190, 181, 185, 184, 184, 189, 192, 178, 193, 176, 175, 175, 212, 204, 165, 169, 211, 163, 181, 186, 173, 194, 183, 180, 161, 167, 201, 177, 182, 187, 185, 177, 164, 171, 171, 164, 207, 162, 152, 156, 172, 161, 173, 192, 176, 185, 181, 170, 189, 169, 204, 183, 181, 174, 178, 180, 200, 165, 186, 183, 184, 191, 177, 175, 193, 182, 196, 190, 185, 174, 178, 185, 163, 188, 181, 187, 196, 165, 184, 160, 179, 179, 168, 169, 190, 177, 184, 167, 161, 167, 177, 171, 179, 181, 185, 185, 201, 187, 184, 171, 195, 172, 162, 168, 190, 184, 175, 182, 203, 183, 179, 172, 175, 161, 194, 166, 174, 160, 173, 191, 171, 187, 178, 167, 167, 186, 174, 178, 191, 186, 166, 183, 169, 170, 164, 189, 180, 163, 174, 177, 175, 173, 183, 187, 179, 184, 173, 160, 160, 158, 170, 152, 172, 186, 160, 205, 177, 169, 167, 155, 168, 137, 156, 161, 160, 178, 185, 145, 181, 198, 146, 150, 163, 166, 176, 191, 177, 187, 161, 194, 159, 172, 140, 177, 169, 178, 179, 186, 193, 163, 158, 152, 180, 189, 173, 187, 167, 153, 150, 165, 166, 165, 157, 178, 191, 188, 202, 181, 169, 141, 179, 154, 162, 199, 164, 171, 213, 165, 217, 178, 187, 160, 183, 169, 165, 182, 153, 163, 169, 181, 165, 173, 148, 153, 171, 193, 156, 186, 155, 170, 161, 168, 180, 156, 161, 167, 161, 198, 191, 182, 185, 170, 190, 180, 162, 161, 173, 150, 164, 168, 171, 166, 163, 170, 176, 155, 153, 180, 167, 193, 163, 188, 172, 182, 167, 186, 224, 180, 165, 174, 182, 186, 159, 166, 172, 176, 179, 179, 184, 150, 178, 174, 163, 187, 184, 187, 170, 199, 158, 159, 159, 158, 173, 157, 162, 175, 159, 175, 170, 179, 136, 167, 168, 161, 154, 168, 155, 159, 187, 178, 182, 167, 181, 178, 171, 160, 168, 175, 171, 171, 173, 157, 173, 145, 150, 177, 158, 172, 169, 190, 177, 186, 157, 141, 177, 177, 175, 163, 163, 150, 130, 184, 190, 168, 168, 169, 168, 146, 172, 175, 163, 171, 156, 170, 159, 159, 185, 178, 158, 179, 165, 180, 175, 139, 180, 145, 163, 174, 179, 186, 161, 191, 189, 179, 156, 173, 159, 200, 176, 167, 151, 188, 185, 153, 169, 199, 190, 159, 159, 146, 196, 172, 141, 153, 182, 194, 195, 192, 157, 150, 169, 172, 173, 167, 250, 170, 173, 159, 153, 169, 154, 168, 155, 176, 174, 166, 174, 170, 168, 196, 166, 138, 175, 153, 163, 167, 185, 170, 168, 162, 175, 160, 198, 179, 178, 160, 157, 168, 165, 159, 167, 150, 163, 181, 134, 115, 170, 157, 180, 151, 166, 151, 164, 129, 128, 167, 149, 155, 132, 147, 166, 148, 138, 157, 156, 125, 144, 145, 144, 124, 142, 147, 128, 135, 133, 143, 131, 130, 127, 143, 134, 147, 152, 145, 147, 144, 161, 148, 132, 143, 117, 140, 163, 137, 139, 140, 165, 113, 143, 148, 128, 164, 158, 137, 125, 138, 132, 161, 158, 142, 131, 165, 119, 132, 162, 122, 170, 154, 146, 117, 131, 141, 141, 149, 134, 140, 132, 158, 154, 175, 151, 134, 150, 120, 130, 146, 157, 144, 138, 134, 144, 144, 176, 185, 169, 182, 166, 184, 172, 179, 169, 189, 170, 189, 179, 172, 197, 171, 193, 182, 184, 176, 184, 195, 183, 177, 199, 176, 167, 186, 188, 197, 174, 196, 198, 205, 152, 183, 187, 196, 190, 190, 163, 173, 182, 179, 179, 217, 189, 175, 200, 184, 184, 189, 194, 180, 189, 170, 193, 179, 189, 192, 189, 187, 177, 171, 186, 186, 203, 138, 183, 202, 180, 181, 197, 198, 185, 198, 194, 201, 190, 189, 205, 183, 192, 179, 185, 189, 200, 204, 202, 187, 184, 178, 159, 196, 199, 194, 183, 198, 162, 163, 185, 193, 180, 168, 195, 188, 174, 214, 185, 166, 172, 194, 188, 190, 185, 174, 161, 199, 176, 182, 193, 177, 183, 180, 199, 170, 185, 190, 183, 184, 173, 177, 194, 171, 178, 169, 171, 183, 185, 172, 177, 177, 188, 183, 176, 177, 182, 171, 187, 194, 181, 179, 160, 199, 203, 168, 188, 188, 181, 182, 179, 181, 207, 179, 190, 187, 182, 188, 188, 174, 194, 184, 187, 197, 194, 182, 190, 204, 193, 178, 195, 177, 173, 171, 190, 196, 170, 191, 176, 205, 183, 177, 161, 203, 206, 215, 175, 174, 194, 206, 188, 175, 180, 184, 177, 177, 203, 182, 219, 195, 179, 155, 180, 175, 192, 219, 181, 185, 184, 170, 187, 166, 170, 189, 183, 175, 189, 171, 181, 192, 178, 171, 170, 182, 169, 170, 192, 164, 174, 179, 182, 178, 169, 166, 185, 188, 185, 176, 199, 181, 190, 188, 189, 167, 194, 183, 174, 198, 189, 195, 203, 172, 190, 193, 185, 188, 183, 183, 189, 163, 193, 184, 189, 187, 191, 190, 177, 190, 178, 178, 188, 175, 184, 172, 169, 183, 175, 169, 196, 179, 189, 178, 177, 189, 190, 181, 192, 167, 175, 167, 180, 184, 184, 202, 178, 182, 175, 170, 196, 166, 161, 190, 190, 191, 170, 173, 193, 179, 186, 159, 163, 183, 171, 191, 191, 189, 194, 173, 185, 198, 172, 187, 186, 183, 173, 177, 172, 175, 191, 190, 164, 186, 186, 188, 163, 182, 180, 187, 167, 172, 177, 186, 186, 185, 170, 179, 183, 164, 165, 172, 179, 168, 151, 174, 172, 183, 172, 181, 140, 153, 171, 187, 176, 181, 212, 150, 167, 180, 189, 183, 163, 181, 162, 188, 170, 185, 182, 177, 181, 171, 186, 186, 169, 188, 168, 169, 172, 187, 187, 174, 166, 187, 184, 168, 186, 174, 174, 165, 174, 186, 177, 181, 166, 167, 177, 136, 157, 117, 150, 156, 141, 182, 160, 163, 136, 150, 158, 146, 161, 134, 175, 155, 186, 137, 137, 164, 169, 175, 187, 166, 183, 162, 158, 140, 192, 196, 143, 152, 163, 175, 216, 179, 154, 184, 190, 171, 139, 145, 207, 116, 188, 177, 138, 143, 161, 136, 182, 177, 173, 171, 196, 168, 137, 180, 128, 156, 155, 156, 167, 173, 191, 126, 160, 195, 136, 153, 150, 153, 178, 157, 169, 143, 180, 178, 179, 186, 192, 183, 153, 192, 182, 183, 152, 180, 156, 153, 156, 164, 157, 149, 176, 136, 182, 173, 171, 152, 194, 115, 166, 178, 174, 172, 156, 164, 160, 173, 161, 157, 181, 188, 155, 136, 184, 162, 159, 179, 188, 176, 188, 126, 135, 127, 130, 152, 130, 118, 162, 117, 143, 144, 148, 153, 175, 130, 126, 143, 116, 153, 171, 159, 144, 119, 136, 149, 138, 139, 156, 122, 170, 167, 127, 170, 120, 139, 110, 135, 125, 126, 143, 141, 116, 144, 172, 141, 147, 152, 150, 113, 114, 144, 138, 139, 132, 137, 152, 145, 128, 138, 145, 127, 146, 162, 174, 138, 121, 109, 129, 169, 126, 163, 144, 136, 137, 142, 160, 158, 187, 156, 141, 126, 140, 136, 170, 146, 146, 117, 145, 116, 129, 127, 134, 160, 137, 134, 153, 125, 155, 165, 144, 157, 139, 134, 166, 149, 113, 125, 155, 183, 164, 180, 174, 174, 176, 163, 156, 155, 172, 148, 186, 158, 157, 184, 162, 153, 163, 176, 178, 152, 197, 161, 144, 173, 159, 179, 148, 174, 168, 143, 151, 172, 142, 172, 177, 156, 177, 178, 162, 187, 158, 167, 140, 175, 161, 172, 168, 175, 160, 183, 178, 171, 174, 175, 169, 181, 181, 174, 170, 153, 183, 158, 181, 180, 167, 160, 168, 195, 182, 168, 142, 166, 169, 166, 171, 161, 194, 187, 175, 193, 165, 182, 153, 139, 202, 156, 167, 177, 178, 159, 156, 171, 165, 188, 176, 179, 147, 169, 192, 161, 174, 157
+Het , 263, 271, 278, 295, 268, 280, 281, 272, 245, 277, 234, 273, 291, 315, 265, 281, 258, 270, 299, 196, 316, 280, 220, 278, 314, 296, 256, 239, 254, 319, 259, 276, 318, 311, 270, 289, 266, 285, 279, 272, 313, 243, 270, 286, 299, 291, 306, 278, 262, 255, 264, 305, 281, 265, 272, 256, 264, 257, 282, 265, 280, 274, 263, 274, 296, 277, 318, 273, 310, 271, 327, 289, 277, 276, 314, 308, 297, 258, 312, 314, 287, 314, 274, 288, 313, 296, 321, 307, 292, 256, 275, 311, 316, 297, 312, 279, 259, 263, 267, 271, 266, 291, 313, 293, 281, 272, 256, 269, 245, 301, 278, 265, 315, 282, 247, 297, 255, 274, 251, 276, 295, 241, 298, 241, 279, 272, 282, 303, 282, 271, 267, 249, 303, 290, 285, 309, 229, 296, 286, 253, 261, 298, 270, 283, 274, 300, 272, 294, 256, 246, 267, 293, 268, 298, 269, 279, 232, 281, 299, 292, 257, 259, 284, 200, 281, 298, 320, 253, 298, 288, 305, 299, 304, 260, 291, 296, 246, 289, 277, 299, 285, 277, 281, 287, 267, 233, 212, 225, 228, 234, 202, 254, 188, 240, 224, 253, 255, 255, 256, 217, 226, 253, 255, 234, 237, 212, 212, 239, 217, 242, 245, 205, 196, 218, 246, 199, 235, 213, 144, 233, 229, 235, 235, 250, 224, 223, 235, 260, 272, 292, 255, 209, 213, 221, 214, 196, 232, 251, 203, 232, 225, 218, 224, 244, 205, 222, 226, 207, 222, 205, 236, 251, 235, 267, 232, 220, 241, 203, 215, 222, 238, 222, 215, 250, 217, 268, 277, 295, 301, 236, 221, 223, 211, 214, 247, 241, 224, 212, 232, 214, 215, 214, 190, 245, 226, 241, 250, 210, 234, 236, 217, 229, 227, 217, 213, 219, 241, 309, 294, 273, 291, 309, 288, 249, 263, 261, 210, 214, 207, 249, 227, 204, 227, 227, 231, 228, 237, 228, 244, 225, 245, 298, 274, 269, 291, 267, 313, 297, 277, 300, 281, 291, 259, 309, 284, 326, 293, 306, 259, 289, 295, 264, 287, 222, 300, 256, 292, 294, 281, 279, 321, 250, 268, 297, 280, 260, 306, 258, 265, 290, 263, 256, 288, 300, 272, 283, 267, 312, 284, 284, 274, 291, 305, 274, 270, 289, 254, 270, 279, 276, 326, 277, 288, 288, 289, 318, 267, 276, 249, 288, 292, 287, 265, 258, 267, 307, 267, 316, 294, 304, 291, 309, 294, 247, 294, 318, 303, 273, 282, 287, 277, 313, 288, 270, 298, 245, 300, 294, 304, 269, 306, 295, 270, 277, 249, 286, 299, 272, 292, 275, 307, 309, 284, 277, 289, 268, 283, 268, 320, 261, 296, 261, 280, 284, 289, 273, 264, 281, 249, 280, 215, 257, 282, 301, 290, 326, 307, 301, 341, 263, 270, 270, 294, 273, 271, 322, 302, 295, 270, 253, 302, 289, 299, 320, 327, 296, 283, 303, 238, 305, 285, 270, 291, 251, 269, 259, 293, 302, 302, 275, 279, 272, 338, 264, 269, 292, 292, 272, 283, 265, 311, 295, 262, 251, 264, 297, 312, 260, 278, 292, 315, 248, 285, 271, 283, 276, 303, 296, 297, 295, 276, 274, 327, 281, 275, 285, 288, 314, 229, 263, 251, 242, 292, 244, 254, 321, 131, 237, 231, 209, 233, 240, 210, 210, 291, 274, 324, 305, 228, 299, 285, 266, 284, 275, 253, 289, 273, 319, 273, 284, 283, 261, 272, 286, 261, 293, 291, 323, 266, 283, 294, 282, 316, 280, 270, 290, 296, 265, 307, 291, 287, 286, 306, 304, 293, 301, 318, 273, 259, 292, 311, 270, 323, 293, 300, 306, 317, 296, 280, 278, 289, 294, 284, 305, 275, 263, 348, 282, 295, 269, 272, 312, 265, 335, 291, 310, 262, 233, 215, 229, 250, 242, 231, 220, 259, 207, 206, 208, 224, 213, 204, 257, 244, 230, 228, 218, 209, 204, 228, 224, 206, 201, 207, 239, 207, 228, 221, 207, 271, 204, 224, 223, 206, 220, 219, 241, 189, 235, 223, 233, 266, 223, 247, 229, 198, 235, 194, 246, 236, 209, 239, 241, 238, 256, 277, 229, 258, 274, 289, 251, 223, 258, 242, 244, 234, 250, 284, 241, 258, 257, 192, 218, 196, 279, 207, 188, 219, 277, 268, 216, 200, 309, 223, 285, 273, 216, 288, 218, 192, 217, 243, 230, 212, 209, 220, 268, 287, 202, 257, 293, 220, 222, 198, 244, 227, 240, 241, 228, 246, 289, 273, 224, 233, 185, 201, 227, 165, 264, 218, 233, 279, 227, 214, 230, 232, 219, 212, 247, 264, 216, 234, 202, 241, 241, 212, 245, 231, 238, 249, 221, 238, 259, 242, 218, 229, 201, 238, 209, 244, 261, 229, 268, 236, 243, 235, 200, 224, 243, 212, 232, 227, 211, 238, 226, 192, 219, 243, 255, 217, 238, 200, 229, 266, 284, 224, 240, 226, 241, 237, 221, 240, 243, 231, 234, 212, 240, 210, 234, 230, 223, 233, 233, 235, 276, 237, 193, 211, 244, 274, 220, 155, 234, 230, 212, 220, 255, 219, 216, 208, 217, 193, 215, 216, 238, 242, 237, 241, 289, 287, 297, 330, 324, 268, 294, 260, 284, 281, 274, 291, 251, 299, 228, 243, 264, 222, 281, 248, 228, 193, 184, 224, 177, 193, 232, 195, 197, 198, 292, 255, 315, 222, 212, 242, 235, 196, 267, 242, 201, 273, 261, 259, 196, 252, 252, 237, 267, 217, 274, 223, 225, 245, 231, 281, 217, 257, 288, 256, 257, 230, 199, 228, 203, 218, 217, 222, 212, 238, 234, 221, 212, 231, 233, 182, 248, 229, 254, 231, 244, 232, 241, 238, 239, 197, 238, 211, 251, 234, 231, 218, 218, 221, 218, 200, 239, 269, 277, 263, 223, 280, 240, 249, 243, 255, 235, 233, 228, 237, 214, 235, 222, 215, 245, 273, 214, 235, 224, 253, 220, 296, 278, 266, 297, 202, 218, 232, 286, 280, 321, 228, 243, 200, 236, 236, 224, 213, 250, 231, 221, 218, 263, 215, 246, 251, 237, 221, 243, 220, 216, 232, 239, 225, 212, 230, 221, 237, 239, 238, 254, 242, 242, 252, 280, 240, 275, 227, 264, 211, 260, 249, 228, 229, 223, 243, 236, 232, 220, 250, 216, 225, 211, 235, 275, 266, 279, 249, 294, 293, 256, 262, 284, 262, 240, 241, 254, 228, 186, 241, 310, 281, 286, 269, 259, 256, 227, 287, 165, 262, 284, 278, 256, 208, 216, 252, 228, 246, 228, 248, 232, 235, 254, 294, 287, 320, 280, 300, 229, 253, 237, 214, 246, 254, 245, 219, 218, 283, 302, 276, 278, 279, 244, 264, 269, 255, 254, 249, 256, 241, 236, 259, 234, 222, 211, 251, 235, 214, 240, 224, 208, 223, 217, 213, 219, 231, 243, 227, 252, 225, 246, 219, 242, 224, 232, 271, 218, 232, 248, 231, 217, 236, 220, 243, 227, 244, 215, 233, 231, 238, 223, 239, 242, 207, 205, 216, 250, 226, 210, 223, 232, 214, 160, 247, 238, 243, 203, 263, 239, 287, 240, 246, 284, 263, 240, 291, 270, 236, 213, 246, 253, 227, 228, 252, 249, 224, 223, 217, 231, 235, 240, 234, 229, 241, 231, 227, 209, 225, 215, 239, 228, 223, 230, 238, 228, 233, 248, 228, 256, 234, 226, 213, 228, 243, 204, 230, 210, 230, 212, 229, 209, 224, 240, 217, 232, 220, 232, 215, 227, 216, 212, 221, 201, 233, 230, 242, 219, 198, 218, 249, 219, 207, 247, 206, 226, 234, 219, 212, 228, 230, 228, 220, 223, 206, 225, 209, 230, 236, 228, 237, 240, 197, 258, 296, 270, 272, 288, 230, 216, 225, 216, 221, 237, 216, 233, 204, 203, 230, 211, 231, 216, 216, 226, 242, 218, 232, 239, 219, 251, 219, 219, 218, 186, 236, 214, 251, 228, 226, 226, 230, 237, 236, 244, 235, 229, 225, 218, 237, 233, 215, 241, 218, 237, 252, 221, 241, 232, 210, 233, 228, 219, 207, 228, 222, 232, 224, 217, 238, 226, 224, 236, 229, 217, 213, 242, 234, 241, 231, 243, 220, 227, 243, 274, 258, 200, 242, 222, 225, 240, 220, 226, 240, 232, 202, 215, 223, 227, 242, 240, 245, 226, 221, 258, 216, 226, 224, 228, 226, 225, 272, 254, 251, 272, 270, 263, 266, 266, 255, 266, 266, 188, 243, 268, 258, 299, 273, 301, 281, 275, 259, 255, 222, 271, 244, 244, 284, 311, 279, 271, 260, 233, 268, 272, 282, 207, 278, 273, 294, 273, 265, 224, 270, 235, 244, 264, 262, 281, 248, 227, 272, 238, 260, 284, 290, 256, 272, 260, 279, 270, 249, 262, 229, 233, 281, 289, 243, 291, 254, 248, 235, 286, 167, 273, 199, 272, 246, 243, 239, 283, 263, 238, 281, 256, 277, 260, 279, 287, 284, 267, 278, 258, 274, 246, 298, 254, 258, 275, 252, 274, 260, 297, 277, 228, 237, 274, 249, 274, 277, 264, 245, 249, 268, 273, 242, 292, 279, 279, 258, 252, 260, 272, 284, 256, 248, 245, 277, 243, 255, 272, 245, 255, 161, 231, 277, 261, 244, 259, 259, 267, 268, 257, 269, 254, 256, 266, 253, 257, 271, 268, 293, 250, 285, 236, 287, 263, 280, 276, 268, 265, 267, 264, 266, 278, 282, 258, 287, 244, 281, 254, 289, 267, 269, 268, 262, 245, 254, 289, 298, 276, 285, 283, 278, 252, 262, 276, 277, 272, 243, 305, 274, 254, 288, 258, 269, 263, 265, 252, 266, 286, 256, 255, 250, 273, 288, 298, 298, 238, 240, 234, 265, 274, 274, 290, 246, 247, 288, 235, 258, 261, 271, 288, 246, 240, 274, 255, 263, 245, 262, 301, 253, 296, 247, 269, 233, 254, 276, 235, 242, 256, 270, 265, 259, 236, 257, 280, 278, 252, 248, 278, 267, 243, 240, 301, 269, 279, 251, 266, 308, 284, 245, 230, 244, 259, 285, 281, 281, 252, 294, 248, 146, 274, 273, 287, 262, 251, 257, 278, 277, 259, 262, 283, 280, 255, 279, 260, 267, 294, 244, 291, 284, 254, 237, 281, 276, 275, 262, 278, 241, 262, 246, 274, 286, 260, 247, 276, 270, 253, 228, 253, 247, 307, 266, 264, 251, 287, 292, 271, 292, 277, 315, 271, 274, 277, 308, 266, 273, 280, 301, 263, 283, 316, 280, 301, 303, 289, 280, 299, 326, 284, 336, 293, 278, 307, 294, 288, 309, 292, 258, 265, 287, 296, 268, 323, 291, 310, 299, 287, 277, 266, 282, 285, 255, 332, 282, 307, 269, 272, 256, 287, 303, 286, 329, 272, 280, 305, 319, 284, 320, 306, 263, 276, 248, 290, 271, 333, 311, 289, 253, 276, 323, 280, 311, 300, 296, 276, 283, 258, 279, 304, 289, 289, 294, 286, 280, 315, 302, 291, 252, 222, 249, 251, 238, 228, 235, 228, 220, 209, 230, 231, 215, 234, 207, 225, 221, 230, 220, 226, 223, 222, 255, 198, 207, 224, 242, 225, 212, 230, 247, 223, 198, 213, 253, 243, 230, 216, 232, 226, 219, 231, 232, 245, 232, 204, 238, 277, 220, 239, 201, 217, 216, 227, 200, 204, 223, 231, 210, 223, 211, 237, 243, 218, 234, 238, 215, 281, 246, 208, 262, 220, 207, 238, 225, 208, 223, 225, 219, 243, 217, 234, 214, 233, 237, 222, 211, 204, 200, 242, 220, 236, 270, 229, 218, 228, 230, 235, 244, 258, 234, 218, 234, 255, 211, 208, 241, 188, 220, 246, 250, 215, 228, 225, 229, 248, 259, 216, 221, 236, 232, 238, 232, 223, 230, 233, 212, 233, 231, 226, 231, 236, 209, 215, 221, 215, 238, 224, 241, 217, 230, 251, 219, 221, 218, 223, 231, 249, 218, 221, 213, 217, 260, 222, 222, 248, 228, 236, 235, 237, 231, 234, 206, 248, 227, 226, 221, 240, 224, 223, 210, 220, 222, 221, 193, 210, 222, 202, 218, 231, 223, 226, 234, 214, 216, 207, 251, 211, 254, 209, 213, 218, 259, 220, 200, 186, 230, 260, 242, 213, 222, 252, 214, 228, 227, 231, 239, 235, 193, 211, 228, 248, 227, 246, 240, 216, 240, 231, 228, 216, 214, 226, 255, 229, 215, 219, 230, 216, 237, 236, 246, 244, 254, 238, 246, 238, 220, 245, 230, 244, 215, 240, 247, 249, 230, 217, 232, 241, 188, 240, 218, 233, 214, 250, 232, 230, 255, 226, 189, 233, 201, 237, 239, 234, 234, 250, 230, 267, 234, 266, 223, 226, 237, 220, 221, 219, 234, 228, 239, 240, 228, 222, 200, 221, 223, 236, 227, 226, 211, 217, 238, 238, 224, 223, 228, 221, 197, 237, 241, 251, 218, 227, 233, 219, 239, 216, 238, 223, 207, 240, 252, 216, 224, 217, 245, 238, 204, 230, 236, 225, 255, 238, 239, 221, 219, 208, 221, 240, 219, 203, 246, 213, 241, 228, 229, 242, 236, 231, 232, 216, 235, 211, 220, 228, 235, 241, 229, 215, 256, 236, 227, 235, 214, 245, 256, 236, 228, 230, 238, 233, 223, 247, 285, 233, 252, 218, 255, 215, 275, 249, 244, 225, 240, 206, 222, 250, 236, 254, 220, 209, 269, 215, 232, 222, 243, 220, 241, 247, 227, 237, 245, 210, 213, 223, 227, 237, 253, 237, 230, 221, 234, 198, 231, 250, 241, 249, 243, 243, 228, 233, 231, 231, 251, 252, 233, 288, 297, 298, 282, 277, 283, 259, 278, 265, 252, 274, 262, 264, 264, 306, 251, 285, 231, 317, 315, 273, 237, 244, 210, 275, 234, 253, 263, 272, 190, 256, 307, 302, 273, 257, 203, 248, 249, 211, 219, 256, 264, 272, 202, 306, 236, 260, 281, 283, 279, 306, 249, 240, 244, 244, 203, 262, 312, 267, 288, 260, 252, 270, 255, 238, 203, 314, 271, 227, 303, 294, 275, 277, 253, 276, 245, 288, 254, 239, 248, 215, 220, 230, 266, 230, 234, 218, 271, 232, 298, 264, 253, 271, 269, 290, 268, 279, 205, 276, 247, 265, 228, 306, 264, 247, 267, 244, 268, 267, 266, 234, 275, 259, 233, 229, 271, 268, 232, 265, 277, 243, 240, 235, 244, 301, 270, 291, 291, 298, 319, 311, 261, 307, 286, 236, 267, 271, 261, 281, 301, 285, 306, 268, 281, 274, 284, 292, 291, 297, 276, 275, 274, 314, 294, 264, 309, 271, 312, 297, 302, 290, 281, 303, 278, 297, 294, 270, 249, 274, 287, 271, 285, 327, 306, 289, 283, 293, 279, 287, 252, 292, 300, 312, 280, 305, 294, 278, 266, 292, 305, 341, 295, 263, 291, 265, 293, 285, 303, 302, 270, 282, 245, 256, 294, 315, 290, 311, 269, 268, 284, 281, 236, 280, 292, 293, 314, 270, 320, 298, 287, 302, 279, 265, 282, 298, 306, 300, 246, 265, 292, 315, 269, 255, 259, 264, 258, 270, 271, 277, 269, 287, 277, 283, 258, 273, 279, 265, 279, 297, 262, 244, 262, 267, 259, 273, 264, 274, 279, 260, 283, 250, 259, 289, 300, 288, 278, 264, 270, 274, 242, 277, 275, 265, 262, 274, 294, 230, 281, 284, 285, 254, 273, 260, 277, 264, 280, 269, 270, 253, 249, 276, 279, 290, 256, 276, 267, 256, 249, 285, 285, 209, 294, 262, 311, 272, 261, 260, 257, 233, 242, 242, 251, 232, 232, 257, 267, 296, 222, 281, 250, 264, 235, 299, 277, 269, 260, 241, 247, 244, 260, 259, 232, 306, 283, 293
+Hom , 300, 258, 262, 276, 277, 259, 237, 302, 304, 262, 286, 301, 260, 252, 266, 273, 259, 284, 260, 315, 246, 261, 306, 276, 246, 265, 275, 281, 289, 237, 281, 268, 247, 269, 266, 274, 272, 257, 268, 270, 244, 291, 273, 271, 272, 259, 224, 251, 279, 275, 272, 243, 269, 274, 280, 262, 280, 302, 269, 273, 280, 294, 246, 250, 263, 254, 227, 272, 238, 266, 241, 271, 251, 245, 254, 280, 289, 260, 251, 231, 269, 254, 241, 260, 266, 248, 242, 269, 269, 269, 265, 254, 255, 249, 242, 253, 279, 262, 273, 274, 276, 256, 243, 257, 276, 265, 273, 249, 311, 248, 290, 275, 260, 281, 275, 266, 270, 258, 278, 269, 262, 282, 255, 268, 273, 261, 256, 249, 280, 282, 275, 303, 251, 258, 270, 248, 301, 265, 271, 266, 254, 260, 252, 287, 262, 261, 280, 248, 280, 297, 275, 242, 269, 258, 262, 290, 293, 279, 243, 248, 262, 301, 249, 310, 265, 266, 256, 280, 270, 282, 255, 277, 241, 263, 269, 259, 269, 268, 264, 234, 246, 257, 256, 265, 244, 280, 288, 286, 276, 272, 298, 266, 302, 263, 279, 252, 248, 269, 258, 279, 264, 259, 247, 277, 268, 290, 277, 263, 272, 264, 254, 285, 302, 286, 270, 290, 272, 298, 321, 264, 289, 284, 260, 264, 286, 284, 263, 266, 285, 250, 260, 294, 292, 283, 292, 300, 273, 260, 295, 278, 282, 281, 275, 259, 289, 286, 266, 299, 284, 287, 266, 278, 269, 266, 276, 277, 260, 286, 301, 286, 257, 282, 279, 271, 274, 286, 230, 238, 265, 263, 274, 267, 269, 273, 262, 264, 286, 284, 279, 266, 274, 286, 300, 249, 283, 286, 260, 293, 276, 283, 278, 272, 282, 293, 271, 293, 282, 263, 272, 274, 253, 245, 245, 279, 278, 255, 295, 286, 286, 250, 280, 285, 280, 278, 270, 278, 266, 287, 266, 273, 255, 254, 262, 270, 251, 270, 266, 262, 253, 253, 269, 233, 270, 257, 252, 248, 255, 254, 283, 262, 268, 275, 258, 287, 237, 265, 248, 255, 254, 287, 245, 274, 277, 244, 257, 270, 254, 275, 266, 259, 259, 274, 269, 266, 267, 258, 275, 285, 255, 257, 276, 257, 242, 248, 256, 258, 273, 259, 239, 254, 249, 269, 278, 256, 258, 242, 271, 248, 281, 262, 247, 265, 261, 253, 256, 252, 270, 235, 272, 249, 255, 251, 240, 274, 269, 257, 251, 250, 268, 264, 264, 264, 261, 270, 250, 272, 242, 232, 268, 293, 263, 255, 273, 260, 281, 250, 246, 270, 258, 269, 248, 252, 279, 270, 251, 270, 261, 259, 256, 260, 258, 287, 251, 250, 239, 257, 265, 261, 286, 233, 285, 289, 256, 248, 260, 239, 252, 237, 229, 274, 266, 262, 235, 275, 276, 219, 247, 277, 294, 273, 260, 259, 255, 231, 236, 251, 260, 242, 270, 247, 241, 250, 263, 291, 247, 243, 249, 257, 274, 255, 267, 258, 257, 255, 266, 249, 248, 278, 266, 267, 246, 258, 277, 263, 281, 259, 254, 276, 255, 232, 238, 282, 249, 276, 273, 264, 259, 277, 258, 272, 244, 255, 234, 256, 284, 248, 265, 242, 274, 287, 262, 272, 246, 282, 241, 252, 341, 284, 271, 279, 265, 283, 275, 278, 271, 264, 239, 272, 282, 261, 255, 273, 271, 293, 276, 279, 304, 247, 275, 259, 253, 264, 244, 276, 284, 258, 254, 242, 262, 263, 268, 262, 243, 285, 283, 277, 243, 274, 243, 260, 265, 264, 241, 251, 258, 249, 253, 256, 283, 261, 253, 278, 253, 244, 268, 250, 242, 252, 261, 254, 254, 244, 254, 269, 269, 280, 238, 250, 241, 259, 279, 251, 271, 235, 264, 271, 273, 265, 281, 277, 269, 275, 277, 277, 275, 289, 297, 300, 279, 293, 288, 268, 258, 285, 285, 271, 279, 299, 261, 270, 285, 296, 293, 267, 280, 264, 266, 285, 268, 298, 287, 265, 289, 285, 289, 267, 306, 272, 287, 274, 252, 304, 272, 282, 293, 262, 278, 271, 266, 286, 266, 257, 271, 265, 251, 277, 266, 276, 264, 272, 278, 259, 267, 279, 292, 270, 252, 293, 274, 264, 296, 286, 283, 244, 279, 317, 283, 269, 257, 290, 290, 257, 282, 235, 260, 266, 271, 264, 299, 280, 283, 274, 307, 282, 296, 262, 237, 295, 258, 255, 285, 280, 283, 263, 283, 263, 291, 284, 282, 258, 272, 292, 285, 314, 292, 294, 313, 262, 292, 272, 250, 294, 302, 281, 276, 284, 281, 269, 257, 296, 278, 299, 263, 269, 300, 265, 278, 274, 261, 277, 269, 257, 261, 284, 295, 261, 269, 276, 284, 252, 275, 254, 262, 247, 271, 313, 278, 262, 289, 266, 280, 285, 279, 283, 286, 270, 274, 273, 289, 283, 307, 274, 261, 254, 287, 278, 285, 260, 260, 293, 284, 271, 262, 268, 295, 282, 291, 264, 269, 282, 262, 275, 279, 280, 275, 302, 287, 268, 266, 268, 296, 276, 274, 285, 269, 268, 280, 289, 289, 272, 302, 262, 276, 275, 259, 267, 268, 252, 273, 266, 231, 236, 262, 280, 290, 252, 292, 295, 255, 295, 281, 278, 287, 270, 276, 251, 268, 290, 272, 288, 286, 308, 284, 275, 302, 303, 288, 241, 270, 267, 277, 282, 272, 272, 288, 272, 281, 292, 257, 260, 272, 293, 275, 270, 274, 251, 276, 270, 275, 281, 280, 274, 283, 286, 281, 262, 263, 266, 269, 290, 266, 273, 270, 281, 299, 290, 271, 269, 279, 278, 268, 271, 291, 263, 271, 248, 275, 268, 276, 280, 257, 271, 301, 249, 278, 253, 273, 272, 285, 290, 269, 296, 289, 288, 271, 257, 260, 289, 243, 265, 275, 269, 269, 286, 279, 287, 289, 293, 272, 294, 288, 276, 262, 299, 284, 293, 287, 286, 261, 252, 258, 230, 316, 280, 270, 240, 266, 256, 292, 260, 296, 278, 280, 284, 291, 257, 270, 290, 292, 275, 284, 288, 279, 278, 266, 273, 289, 290, 271, 267, 288, 293, 291, 290, 273, 276, 271, 272, 267, 287, 268, 242, 273, 246, 276, 257, 292, 283, 279, 282, 268, 280, 281, 286, 287, 296, 269, 285, 278, 304, 278, 255, 249, 268, 268, 257, 237, 255, 265, 259, 249, 281, 275, 254, 284, 304, 273, 254, 246, 245, 246, 246, 264, 286, 241, 317, 266, 248, 247, 272, 299, 304, 253, 284, 277, 287, 265, 273, 272, 273, 279, 243, 210, 250, 230, 278, 277, 273, 274, 252, 267, 286, 266, 281, 268, 230, 240, 257, 264, 266, 263, 250, 262, 234, 247, 278, 275, 276, 254, 289, 293, 282, 279, 282, 301, 285, 275, 299, 286, 292, 279, 287, 301, 273, 284, 262, 268, 275, 288, 264, 285, 287, 242, 275, 283, 279, 278, 295, 294, 294, 278, 287, 255, 277, 273, 277, 279, 293, 271, 268, 304, 290, 288, 259, 276, 285, 277, 283, 301, 316, 266, 279, 288, 300, 246, 261, 239, 273, 254, 246, 253, 281, 243, 264, 266, 308, 271, 276, 281, 293, 257, 262, 292, 279, 284, 283, 273, 292, 270, 292, 280, 280, 282, 297, 291, 297, 280, 270, 275, 297, 266, 279, 286, 275, 282, 269, 280, 279, 298, 277, 291, 291, 291, 296, 287, 294, 265, 304, 290, 277, 297, 284, 281, 278, 291, 280, 291, 290, 278, 312, 265, 285, 274, 297, 281, 269, 277, 303, 273, 281, 304, 279, 284, 278, 296, 283, 300, 296, 270, 291, 303, 279, 297, 284, 291, 292, 283, 287, 287, 271, 243, 265, 247, 242, 288, 283, 290, 290, 289, 284, 286, 289, 283, 305, 280, 306, 282, 295, 275, 300, 263, 290, 275, 261, 295, 265, 279, 290, 277, 315, 270, 303, 262, 278, 302, 277, 280, 267, 259, 282, 272, 302, 287, 294, 286, 289, 286, 273, 289, 287, 278, 303, 273, 288, 302, 277, 278, 287, 283, 276, 285, 288, 272, 302, 291, 297, 277, 271, 287, 292, 275, 266, 278, 278, 285, 287, 277, 298, 274, 257, 260, 300, 278, 282, 288, 284, 304, 279, 277, 281, 298, 290, 302, 281, 280, 281, 282, 276, 290, 270, 301, 288, 292, 290, 282, 279, 240, 253, 267, 259, 261, 270, 255, 273, 264, 239, 265, 298, 271, 254, 266, 237, 250, 253, 254, 255, 272, 258, 284, 275, 266, 249, 261, 230, 249, 254, 255, 267, 246, 232, 248, 290, 254, 246, 257, 241, 257, 289, 242, 270, 254, 264, 271, 258, 263, 275, 246, 266, 264, 254, 251, 270, 253, 266, 255, 243, 251, 241, 260, 277, 241, 261, 269, 246, 275, 244, 292, 234, 311, 253, 275, 241, 258, 288, 269, 239, 263, 271, 257, 272, 245, 250, 247, 231, 259, 271, 242, 240, 261, 259, 238, 267, 272, 248, 259, 261, 270, 227, 253, 265, 263, 235, 257, 247, 224, 247, 284, 281, 250, 268, 285, 231, 241, 246, 270, 269, 255, 264, 254, 255, 276, 253, 251, 260, 264, 237, 279, 250, 306, 280, 249, 256, 265, 246, 273, 258, 251, 258, 243, 258, 251, 275, 260, 260, 257, 236, 214, 254, 236, 256, 246, 269, 252, 257, 250, 269, 262, 252, 266, 238, 239, 254, 268, 280, 242, 276, 248, 256, 267, 264, 242, 268, 255, 235, 212, 237, 235, 248, 245, 264, 258, 244, 241, 262, 275, 241, 267, 260, 245, 261, 253, 238, 249, 253, 268, 264, 258, 259, 266, 255, 240, 243, 263, 269, 261, 289, 258, 248, 249, 255, 273, 269, 240, 285, 277, 260, 261, 244, 260, 273, 259, 257, 263, 266, 254, 251, 258, 250, 281, 248, 279, 251, 254, 265, 260, 256, 265, 253, 273, 255, 258, 244, 262, 251, 258, 260, 255, 249, 261, 231, 263, 266, 244, 253, 242, 254, 264, 267, 252, 240, 249, 260, 241, 267, 224, 276, 295, 247, 245, 245, 276, 271, 280, 245, 259, 256, 255, 242, 237, 266, 244, 235, 258, 259, 272, 247, 244, 270, 269, 240, 247, 254, 254, 253, 252, 250, 267, 257, 248, 263, 279, 256, 254, 288, 300, 257, 310, 269, 255, 270, 260, 253, 233, 269, 235, 285, 248, 253, 268, 259, 251, 278, 252, 263, 252, 271, 252, 250, 267, 245, 244, 278, 269, 245, 237, 272, 222, 255, 282, 254, 270, 260, 248, 252, 281, 281, 257, 251, 262, 220, 268, 238, 275, 264, 251, 288, 270, 266, 271, 246, 266, 236, 294, 255, 277, 267, 263, 267, 230, 258, 253, 244, 241, 242, 252, 253, 266, 293, 273, 247, 274, 241, 249, 261, 297, 266, 234, 271, 248, 233, 241, 240, 257, 299, 262, 267, 272, 256, 240, 261, 273, 242, 245, 256, 263, 284, 273, 258, 287, 279, 284, 284, 302, 293, 291, 271, 297, 285, 287, 295, 277, 279, 287, 289, 284, 274, 253, 316, 285, 291, 282, 280, 291, 264, 270, 272, 295, 273, 286, 265, 274, 279, 269, 275, 309, 287, 277, 267, 280, 270, 264, 239, 271, 268, 306, 285, 281, 284, 302, 317, 275, 281, 292, 276, 291, 267, 271, 302, 271, 267, 273, 272, 262, 281, 249, 290, 287, 255, 281, 285, 274, 265, 282, 259, 269, 274, 285, 279, 269, 280, 280, 283, 289, 262, 287, 277, 262, 266, 274, 269, 278, 258, 285, 270, 272, 280, 277, 268, 285, 295, 276, 289, 286, 279, 269, 282, 275, 276, 277, 269, 271, 276, 294, 273, 266, 276, 276, 288, 262, 288, 294, 268, 277, 281, 287, 278, 288, 305, 292, 307, 282, 284, 265, 302, 284, 263, 284, 287, 297, 291, 278, 271, 286, 276, 297, 295, 271, 270, 266, 275, 275, 267, 275, 272, 281, 276, 278, 264, 274, 278, 288, 263, 279, 294, 287, 287, 282, 273, 304, 299, 279, 285, 280, 282, 273, 288, 284, 306, 285, 288, 270, 289, 261, 277, 295, 296, 271, 268, 285, 290, 286, 257, 255, 272, 281, 264, 297, 279, 287, 283, 249, 274, 279, 285, 284, 288, 284, 270, 259, 256, 270, 275, 279, 305, 290, 299, 266, 273, 293, 297, 272, 304, 273, 263, 267, 276, 267, 271, 276, 283, 279, 282, 287, 268, 294, 273, 275, 276, 276, 286, 274, 274, 304, 270, 283, 270, 288, 274, 265, 278, 262, 267, 313, 263, 287, 282, 262, 264, 272, 253, 278, 241, 268, 262, 275, 281, 265, 284, 279, 282, 280, 273, 274, 273, 275, 294, 307, 298, 299, 272, 289, 296, 284, 295, 264, 275, 290, 279, 273, 289, 302, 287, 275, 273, 293, 280, 274, 270, 274, 293, 278, 298, 288, 285, 278, 285, 277, 283, 276, 280, 294, 282, 269, 307, 273, 270, 281, 279, 281, 294, 276, 278, 287, 290, 273, 291, 264, 280, 289, 272, 283, 285, 268, 285, 292, 294, 285, 275, 293, 268, 282, 289, 268, 283, 287, 270, 291, 261, 265, 276, 280, 297, 288, 286, 289, 276, 255, 284, 267, 290, 264, 295, 276, 289, 276, 279, 275, 304, 257, 291, 288, 257, 282, 299, 259, 295, 297, 281, 278, 286, 268, 267, 283, 283, 260, 295, 309, 280, 296, 285, 266, 267, 274, 296, 291, 306, 276, 273, 264, 268, 274, 283, 289, 272, 283, 279, 274, 272, 281, 267, 237, 276, 259, 258, 267, 250, 253, 263, 303, 267, 271, 281, 266, 251, 265, 251, 274, 237, 239, 254, 285, 272, 294, 250, 274, 276, 270, 279, 309, 239, 241, 237, 255, 259, 272, 264, 288, 296, 282, 264, 288, 274, 282, 269, 267, 254, 272, 265, 251, 249, 260, 274, 274, 276, 292, 261, 242, 244, 275, 275, 284, 265, 269, 280, 297, 251, 260, 269, 252, 244, 266, 261, 260, 258, 277, 260, 257, 274, 264, 290, 279, 278, 272, 269, 275, 290, 268, 279, 237, 274, 282, 256, 265, 252, 247, 276, 304, 242, 273, 274, 269, 270, 261, 266, 250, 275, 267, 260, 265, 284, 255, 275, 277, 274, 265, 287, 275, 264, 255, 269, 263, 280, 259, 264, 286, 273, 270, 241, 242, 262, 268, 267, 262, 311, 276, 267, 255, 280, 264, 263, 269, 270, 239, 258, 263, 280, 264, 245, 277, 277, 261, 255, 227, 260, 255, 250, 259, 255, 279, 266, 285, 262, 270, 253, 281, 277, 270, 276, 257, 268, 256, 251, 271, 258, 270, 259, 280, 267, 287, 254, 263, 241, 266, 259, 251, 251, 251, 261, 265, 241, 267, 259, 274, 263, 254, 270, 251, 247, 261, 251, 259, 279, 256, 250, 261, 244, 252, 277, 261, 293, 310, 295, 270, 271, 243, 261, 234, 259, 251, 264, 257, 261, 265, 236, 246, 257, 279, 277, 286, 251, 267, 253, 268, 247, 259, 247, 244, 251, 266, 249, 242, 260, 247, 260, 255, 242, 250, 241, 266, 271, 251, 272, 235, 257, 283, 244, 253, 252, 260, 267, 264, 259, 240, 231, 271, 255, 244, 261, 272, 236, 254, 239, 271, 250, 257, 286, 249, 235, 238, 262, 258, 248, 236, 256, 237, 247, 252, 257, 261, 241, 242, 248, 252, 257, 243, 255, 275, 246, 238, 287, 215, 261, 238, 253, 261, 265, 263, 297, 255, 262, 265, 266, 294, 252, 271, 256, 267, 254, 274, 250, 278, 233, 258, 251, 266, 262, 268, 268, 284, 263, 267, 224, 234, 241
+Missing , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+</pre>
+<p>
+
+<!--==========================================================================
+	Codon change table
+	========================================================================== -->
+	
+<hr> 
+<a name="codonChanges">
+<center>
+<b> Codon changes</b> <p>
+
+	<div class="note">
+		How to read this table: <br>
+		- Rows are reference codons and columns are changed codons. E.g. Row 'AAA' column 'TAA' indicates how many 'AAA' codons have been replaced by 'TAA' codons.<br>
+		- Red background colors indicate that more changes happened (heat-map).<br>
+		- Diagonals are indicated using grey background color <br> 
+		- WARNING: This table may include different translation codon tables (e.g. mamalian DNA and mitochondrial DNA).<br>
+		<p>
+	</div><p>
+
+  
+<table border=1>
+	<thead>
+		<tr> 
+			<th> &nbsp; </th>
+			 <th> AGT </th>  <th> CCA </th>  <th> CCC </th>  <th> CCG </th>  <th> CCT </th>  <th> CGC </th>  <th> CGT </th>  <th> CTA </th>  <th> CTC </th>  <th> CTT </th>  <th> GAA </th>  <th> GAC </th>  <th> GAG </th>  <th> GAT </th>  <th> GCC </th>  <th> GCG </th>  <th> GCT </th>  <th> GGC </th>  <th> TCT </th>  <th> TGC </th>  <th> TGT </th> 
+		</tr>
+	</thead>
+			<tr> 
+				<th> AGT </th>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> CCA </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> CCC </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#3fbf00"> 2 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#3fbf00"> 2 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> CCG </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> CCT </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#3fbf00"> 2 </td>
+					
+						<td class="numeric" bgcolor="#3fbf00"> 2 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> CGC </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> CGT </th>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+			</tr>
+			<tr> 
+				<th> CTA </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> CTC </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> CTT </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#3fbf00"> 2 </td>
+					
+						<td class="numeric" bgcolor="#3fbf00"> 2 </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> GAA </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> GAC </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> GAG </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> GAT </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> GCC </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> GCG </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#ff0000"> 5 </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="#ff0000"> 5 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> GCT </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#3fbf00"> 2 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#3fbf00"> 2 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> GGC </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> TCT </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> TGC </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> TGT </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+			</tr>
+</table>
+</center>
+
+<!--==========================================================================
+	Amino acid change table
+	========================================================================== -->
+
+<hr> 
+<a name="aaChanges">
+<center>
+<b> Amino acid changes</b><p> 
+
+	<div class="note">
+		How to read this table: <br>
+		- Rows are reference amino acids and columns are changed amino acids. E.g. Row 'A' column 'E' indicates how many 'A' amino acids have been replaced by 'E' amino acids.<br>
+		- Red background colors indicate that more changes happened (heat-map).<br>
+		- Diagonals are indicated using grey background color <br> 
+		- WARNING: This table may include different translation codon tables (e.g. mamalian DNA and mitochondrial DNA).<br>
+		<p>
+	</div><p>
+
+<table border=1>
+	<thead>
+		<tr> 
+			<th> &nbsp; </th>
+			 <th> A </th>  <th> C </th>  <th> D </th>  <th> E </th>  <th> G </th>  <th> L </th>  <th> P </th>  <th> R </th>  <th> S </th> 
+		</tr>
+	</thead>
+			<tr> 
+				<th> A </th>
+					
+						<th class="numeric"> 10 </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#1ce200"> 2 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#1ce200"> 2 </td>
+			</tr>
+			<tr> 
+				<th> C </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> D </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> E </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#1ce200"> 2 </td>
+					
+						<th class="numeric"> 1 </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> G </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> L </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> 4 </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> P </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#1ce200"> 2 </td>
+					
+						<th class="numeric"> 6 </th>
+					
+						<td class="numeric" bgcolor="#1ce200"> 2 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+			</tr>
+			<tr> 
+				<th> R </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#1ce200"> 2 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+					
+						<td class="numeric" bgcolor="#00ff00"> 1 </td>
+			</tr>
+			<tr> 
+				<th> S </th>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<td class="numeric" bgcolor="ffffff"> &nbsp </td>
+					
+						<th class="numeric"> &nbsp </th>
+			</tr>
+</table>
+</center>
+
+<!--==========================================================================
+	Chromosome variants table
+	========================================================================== -->
+
+<hr> 
+<a name="chrChanges">
+<center>
+<b> Variants by chromosome</b><p> 
+
+<center>
+	<pre>
+		<img src="http://chart.apis.google.com/chart?cht=bvg&chbh=8,4,2&chs=800x300&chxt=y,y,x,x&chxp=1,50.0|3,50.0&chg=5100000.0,10.0,3,2&chtt=Variants+histogram%3A+22&chxr=0,0.0,102.0|1,0.0,100.0|3,0.0,100.0&chd=e:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMKOuZmR7NcWZpmgAMKnrgotbFxNcLhT1MKLhjMlHXCgAT1czMzI9VHijh6gAVweuq4..eFEf&chxl=1:|Variants%2F1000Kb|2:|0||||||||||10000000||||||||||20000000||||||||||30000000||||||||||40000000||||||||||50000000|51000000|3:|Position"><br>
+		22, Position,0,1000000,2000000,3000000,4000000,5000000,6000000,7000000,8000000,9000000,10000000,11000000,12000000,13000000,14000000,15000000,16000000,17000000,18000000,19000000,20000000,21000000,22000000,23000000,24000000,25000000,26000000,27000000,28000000,29000000,30000000,31000000,32000000,33000000,34000000,35000000,36000000,37000000,38000000,39000000,40000000,41000000,42000000,43000000,44000000,45000000,46000000,47000000,48000000,49000000,50000000,51000000
+22,Count,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,24,41,29,22,36,67,52,20,64,53,73,10,22,19,32,20,19,57,60,37,51,32,46,21,15,34,56,55,51,35,49,69,102,48,8
+
+	</pre>
+</center>
+
+<!--==========================================================================
+	Variants by gene 
+	========================================================================== -->
+
+<center>
+	<hr>
+	<b> Details by gene </b><p>
+	<p>
+	<b><a href="eur_strict_summary.genes.txt">Here</a></b> you can find a tab-separated table.
+</center>
+</div>
+</center>
