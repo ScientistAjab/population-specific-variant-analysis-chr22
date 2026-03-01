@@ -162,3 +162,5 @@ population-specific-variant-analysis-chr22/
 │   └── loose_threshold/   
 ├── results and conclusions/
 └── README.md
+
+## Note: download the data using commands from data/Commands to download data.txt
